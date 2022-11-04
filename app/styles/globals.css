@@ -1,26 +1,213 @@
-html,
+@font-face {
+  font-family: cinzel-regular;
+  src: url('fonts/Cinzel-Regular.ttf');
+}
+
+@font-face {
+  font-family: cormorant-upright-regular;
+  src: url('fonts/CormorantUpright-Regular.ttf');
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  padding-bottom: 50px;
+  background-color: white;
+}
+
+h3 {
+  color: #bd9319;
 }
 
 a {
-  color: inherit;
+  color: #0275d8;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+a:hover {
+  color: #0275d8;
+  text-decoration: underline;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+td.uh-pre {
+  white-space: pre; /* CSS 2.0 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3.0 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -hp-pre-wrap; /* HP Printers */
+  display: inline-block;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.uh-branding-one {
+  font-family: cinzel-regular, serif;
+  font-size: 1.6em;
+  font-style: normal;
+  letter-spacing: 2.2px;
+  color: #777;
+}
+
+.uh-branding-two {
+  font-family: cormorant-upright-regular, cursive;
+  font-size: 0.8em;
+  font-style: normal;
+  color: #777;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-fixed-top .nav {
+  padding: 40px 0px 0px 0px;
+  background-color: white;
+}
+
+.navbar-fixed-top .navbar-brand {
+  padding: 0px 0px 0px 20px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+.navbar-fixed-top .navbar-brand > img {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+}
+
+.navbar-brand.uh-nav-app-name {
+  font-family: 'Courier New', Courier, sans-serif;
+  font-size: 14px;
+  height: 50px;
+  width: auto;
+  padding-top: 20px;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  color: #555;
+  background-color: white;
+}
+
+div .panel > .panel-heading {
+  background-color: #f5f8ff;
+}
+
+.uh-sort-arrow {
+  font-size: 1.1rem;
+}
+
+.footer {
+  position: absolute;
+  padding-top: 5px;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  font-size: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
   body {
-    color: white;
-    background: black;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: white;
   }
+
+  .navbar {
+    min-height: 90px;
+  }
+
+  .navbar-fixed-top .navbar-brand > img {
+    position: fixed;
+    top: 0;
+    left: 25px;
+    height: 90px;
+    width: 90px;
+    background-color: transparent;
+  }
+
+  .navbar-brand.uh-nav-app-name {
+    position: fixed;
+    top: 0;
+    left: 115px;
+    height: 90px;
+    width: auto;
+    padding-top: 51px;
+    font-size: 22px;
+    white-space: nowrap;
+    text-align: left;
+    background-color: transparent;
+  }
+
+  .uh-branding-one {
+    font-size: 1.8em;
+  }
+
+  .uh-branding-two {
+    font-size: 1.0em;
+  }
+}
+
+.type-list {
+  display: inline;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.type-list li {
+  display: inline;
+}
+
+.type-list li + li:before {
+  content: ", ";
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: #f5f8ff;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                   supported by Chrome and Opera */
+}
+
+.modal-open[style] {
+  padding-right: 0 !important;
+}
+
+.navbar-default[style] {
+  padding-right: 0 !important;
+}
+
+.modal-header {
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #f5f8ff;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
