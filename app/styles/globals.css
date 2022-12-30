@@ -31,7 +31,7 @@ a {
 
 a:hover {
   color: #0275d8;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 td.uh-pre {
@@ -210,4 +210,20 @@ div .panel > .panel-heading {
   -moz-border-radius-topright: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+div.dropdown-menu.show {
+  font-size: 14px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+
+a.dropdown-item:active {
+  color: black;
+  background-color: #e9ecef;
+}
+
+a.dropdown-toggle::after {
+  vertical-align: middle;
 }
