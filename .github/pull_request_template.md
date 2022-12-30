@@ -10,4 +10,5 @@
 
 # Test Checklist
 
+- [ ] Jest Tests Passed:
 - [ ] General Visual Inspection:
