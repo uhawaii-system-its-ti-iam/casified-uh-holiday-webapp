@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Layout from '@components/layout/Layout';
+import Layout from '@/components/layout/Layout';
 
 describe ('Layout', () => {
     it('should render the menubar and footer', () => {
