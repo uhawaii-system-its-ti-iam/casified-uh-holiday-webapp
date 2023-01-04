@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import CampusDropdown from '@components/navbar/campus-dropdown/CampusDropdown';
+import CampusDropdown from '@components/layout/menubar/campus-dropdown/CampusDropdown';
 
 describe('CampusDropdown', () => {
     const campuses = {
@@ -19,7 +19,7 @@ describe('CampusDropdown', () => {
         render(<CampusDropdown />);
     });
 
-    it("should render the dropdown button without the menu open on load", () => {
+    it('should render the dropdown button without the menu open on load', () => {
         expect(screen.getByRole('button', { name: 'Campuses', expanded: false })).toBeInTheDocument;
 
         for (let campus in campuses) {
@@ -27,7 +27,7 @@ describe('CampusDropdown', () => {
         }
     });
 
-    it("should open and close dropdown menu on click", async () => {
+    it('should open and close dropdown menu on click', async () => {
         fireEvent.click(screen.getByRole('button', { name: 'Campuses' }));
 
         await waitFor(() => {
@@ -49,7 +49,7 @@ describe('CampusDropdown', () => {
         });
     });
 
-    it("should open the campus website in a new tab when clicked", async () => {
+    it('should open the campus website in a new tab when clicked', async () => {
         fireEvent.click(screen.getByRole('button', { name: 'Campuses' }));
 
         await waitFor(() => {
