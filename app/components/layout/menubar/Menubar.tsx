@@ -15,8 +15,8 @@ const Menubar = () => {
                         <p className="uh-nav-app-name">hawaii.edu/holidays</p>
                     </Navbar.Brand>
                 </Link>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle />
+                <Navbar.Collapse>
                     <Nav className="ms-auto">
                         <Link href="/" passHref legacyBehavior><Nav.Link>Home</Nav.Link></Link>
                         <Link href="/contact" passHref legacyBehavior><Nav.Link>Contact</Nav.Link></Link>

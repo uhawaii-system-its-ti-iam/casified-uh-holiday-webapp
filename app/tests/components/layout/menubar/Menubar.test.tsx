@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Menubar from '@components/layout/menubar/Menubar';
+import Menubar from '@/components/layout/menubar/Menubar';
 
 describe ('Menubar', () => {
     beforeEach(() => {

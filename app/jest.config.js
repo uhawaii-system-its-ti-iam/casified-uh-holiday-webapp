@@ -7,8 +7,9 @@ module.exports = {
         '@testing-library/jest-dom/extend-expect'
     ],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    moduleDirectories: ["node_modules", "<rootDir>/"],
     moduleNameMapper: {
-        "@components/(.*)": "<rootDir>/components/$1"
+        "@/components/(.*)": "<rootDir>/components/$1",
     },
     testEnvironment: 'jsdom'
 };

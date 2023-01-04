@@ -15,17 +15,34 @@ html {
 }
 
 body {
+  font-size: 14px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   padding-bottom: 50px;
   background-color: white;
 }
 
+a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0275d8;
+  text-decoration: underline;
+}
+
+h3 {
+  color: #bd9319;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
 .uh-branding-one {
   font-family: cinzel-regular, serif;
-  font-size: 1.38em;
+  font-size: 1.6em;
   font-style: normal;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.2px;
   color: #777;
 }
 
@@ -38,7 +55,7 @@ body {
 }
 
 .navbar {
-  margin-top: -5px;
+  background-color: white;
   border-bottom: 1px solid #e7e7e7;
 }
 
@@ -124,12 +141,11 @@ body {
   }
 
   .uh-branding-one {
-    font-size: 1.58em;
-    letter-spacing: 2.2px;
+    font-size: 1.8em;
   }
 
   .uh-branding-two {
-    font-size: 0.9em;
+    font-size: 1.0em;
   }
 }
 

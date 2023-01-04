@@ -1,6 +1,8 @@
+import { Table } from "react-bootstrap";
+
 const ContactTable = () => {
     return (
-        <table className='table table-bordered'>
+        <Table bordered aria-label="Contact Table">
             <tbody>
                 <tr>
                     <td>For General Help/How-To Questions</td>
@@ -15,7 +17,7 @@ const ContactTable = () => {
                     <td>See: <a href="http://www.hawaii.edu/its/" target="_its_office">www.hawaii.edu/its</a></td>
                 </tr>
             </tbody>
-        </table>
+        </Table>
     );
 }
  
