@@ -1,9 +1,7 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Link from 'next/link';
-import Image from 'next/image';
 import CampusDropdown from './campus-dropdown/CampusDropdown';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Menubar = () => {
     return ( 
