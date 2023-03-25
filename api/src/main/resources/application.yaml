@@ -1,0 +1,83 @@
+spring:
+    profiles:
+        active: default
+    jmx:
+        enabled: false
+    h2:
+        console:
+            enabled: false
+    devtools:
+        add-properties: false
+    sql:
+        init:
+            mode: always
+    datasource:
+        name: holidaydb
+        url: jdbc:h2:mem:holidaydb;MODE=MySQL;INIT=create schema IF NOT EXISTS uhapp_db;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password: something
+        driver-class-name: org.h2.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+    jpa:
+        defer-datasource-initialization: true
+        open-in-view: false
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate.ddl-auto: create-drop
+        properties.hibernate.show_sql: false
+        properties.hibernate.use_sql_comments: false
+        properties.hibernate.format_sql: false
+        properties.hibernate.cache.provider_class: org.hibernate.cache.HashtableCacheProvider
+
+server:
+    port: 8081
+    servlet:
+        context-path: /holidaysapi
+    session:
+        timeout: 18000
+
+management:
+    security:
+        enabled: false
+
+app:
+    url:
+        home: /
+        base: http://localhost:8081/holidaysapi
+
+logging:
+    pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%-8level) --- %clr(%-80.80logger{80}){cyan} : %m%n"
+    level:
+        edu.hawaii.its.holiday: INFO
+        org.springframework: INFO
+        org.springframework.cache: INFO
+        org.springframework.boot.test.mock.web: WARN
+        org.hibernate: WARN
+        org.jasig.cas: WARN
+
+
+---
+environment: localhost
+spring:
+    config:
+        activate:
+            on-profile: localhost
+    main:
+        allow-bean-definition-overriding: true
+
+
+---
+environment: test
+spring:
+    config:
+        activate:
+            on-profile: test
+    main:
+        allow-bean-definition-overriding: true
+
+app:
+    url:
+        base: https://www.test.hawaii.edu/holidaysapi
+
+
+...
