@@ -20,7 +20,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": {
+    "rules": { /*to be modified based on the rules we want to add or remove*/
       "arrow-parens": "off",
       "func-names": "off",
       "linebreak-style": "off",
@@ -29,6 +29,7 @@
       "no-plusplus": "off",
       "no-restricted-syntax": "off",
       "no-return-assign": "off",
-      "prefer-arrow-callback": "off"
+      "prefer-arrow-callback": "off",
+      "indent": ["error", 4]
     }
 }
