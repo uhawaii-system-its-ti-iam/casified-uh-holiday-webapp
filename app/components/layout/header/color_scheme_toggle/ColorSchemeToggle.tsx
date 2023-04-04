@@ -1,23 +1,43 @@
-'use client';
+'use client'
 
-import { ActionIcon, useComputedColorScheme, useMantineColorScheme } from '@mantine/core';
-import { IconSun, IconMoon } from '@tabler/icons-react';
+import * as React from 'react'
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
+import { useTheme } from 'next-themes'
+import { Button } from '@/components/ui/button'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 
-const ColorSchemeToggle = () => {
-    const { setColorScheme } = useMantineColorScheme();
-    const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+function ColorSchemeToggle() {
+    const { setTheme } = useTheme()
 
     return (
-        <ActionIcon
-            onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
-            variant="default"
-            size={36}
-            aria-label="Toggle color scheme"
-        >   
-            <IconSun className="mantine-hidden-light" stroke={1.5} data-testid="icon-sun" />
-            <IconMoon className="mantine-hidden-dark" stroke={1.5} data-testid="icon-moon" />
-        </ActionIcon>
-    );
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                    <SunIcon data-testid="SunIcon" className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100
+                      transition-all dark:-rotate-90 dark:scale-0" />
+                    <MoonIcon data-testid="MoonIcon" className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0
+                      transition-all dark:rotate-0 dark:scale-100" />
+                    <span className="sr-only">Toggle theme</span>
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+          Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+          System
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
 }
- 
+
 export default ColorSchemeToggle;

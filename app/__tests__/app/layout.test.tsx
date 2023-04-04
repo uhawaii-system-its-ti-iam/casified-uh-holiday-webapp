@@ -2,8 +2,15 @@ import { render, screen } from '@testing-library/react';
 import Layout from 'app/layout';
 
 // Mock Header workaround because React Testing Library does not support rendering server components.
-jest.mock('@/components/layout/header/Header'); 
+jest.mock('@/components/layout/header/Header');
 
+window.matchMedia = window.matchMedia || function() {
+    return {
+        matches: false,
+        addListener: function() {},
+        removeListener: function() {}
+    };
+};
 describe ('Layout', () => { 
 
     it('should render the menubar and footer', () => {

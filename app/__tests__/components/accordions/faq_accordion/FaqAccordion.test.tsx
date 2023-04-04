@@ -1,28 +1,28 @@
-import { screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import FaqAccordion from '@/components/accordions/faq_accordion/FaqAccordion';
-import { renderWithProviders } from 'jest.setup';
 
 describe('FaqAccordion', () => {
 
     it('should render the FaqAccordion', () => {
-        renderWithProviders(<FaqAccordion />);
+        render(<FaqAccordion />);
 
-        expect(screen.getByTestId('faq-accordion')).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Frequently Asked Questions' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'General Questions' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Resources' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Technologies' })).toBeInTheDocument();
+
         expect(screen.getAllByRole('button').length).toEqual(6);
-        expect(screen.getByText('General Questions')).toBeInTheDocument();
-        expect(screen.getByText('Resources')).toBeInTheDocument();
-        expect(screen.getByText('Technologies')).toBeInTheDocument();
     });
 
     it('should open and close when an accordion item is clicked', () => {
-        renderWithProviders(<FaqAccordion />);
+        render(<FaqAccordion />);
 
-        for (const accordionItem of screen.getAllByRole('button')) {
-            expect(accordionItem).toHaveAttribute('aria-expanded', 'false');
-            fireEvent.click(accordionItem);
-            expect(accordionItem).toHaveAttribute('aria-expanded', 'true');
-            fireEvent.click(accordionItem);
-            expect(accordionItem).toHaveAttribute('aria-expanded', 'false');
-        }
+        const general = screen.getByRole('button', {
+            name: 'Who can answer some basic questions about the application?' 
+        });
+        fireEvent.click(general);
+        expect(screen.getByText('Send an email to')).toBeInTheDocument();
+        fireEvent.click(general);
+        expect(screen.queryByText('Send an email to')).toBe(null);
     });
 });
