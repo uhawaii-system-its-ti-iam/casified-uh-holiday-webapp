@@ -37,7 +37,8 @@ app/*.tsbuildinfo
 app/next-env.d.ts
 
 # IDEs
-/.idea
+.idea
+.vscode
 app/.idea
 app/.vscode
 
