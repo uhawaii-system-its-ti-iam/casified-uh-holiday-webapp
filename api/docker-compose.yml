@@ -1,0 +1,11 @@
+version: '1.0'
+
+services:
+  ui:
+    container_name: casified-uh-holidays-webapp
+    build:
+      context: ..
+      dockerfile: app/Dockerfile
+    ports:
+      - 8080:8080
+      
