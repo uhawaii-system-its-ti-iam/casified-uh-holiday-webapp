@@ -7,9 +7,8 @@ describe ('Contact', () => {
     });
 
     it('should render a Contact Us header and the Contact Table', () => {
-        expect(screen.getByText('Contact Us')).toBeInTheDocument;
         expect(screen.getByRole('heading', { name: 'Contact Us' })).toBeInTheDocument;
         expect(screen.getByLabelText('Contact Table')).toBeInTheDocument;
         expect(screen.getByRole('table')).toBeInTheDocument;
-    })
+    });
 });
