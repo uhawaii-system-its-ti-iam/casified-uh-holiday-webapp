@@ -22,7 +22,7 @@ describe('CampusDropdown', () => {
     it('should render the dropdown button without the menu open on load', () => {
         expect(screen.getByRole('button', { name: 'Campuses', expanded: false })).toBeInTheDocument;
 
-        for (let campus in campuses) {
+        for (const campus in campuses) {
             expect(screen.queryByRole('link', { name: campus })).not.toBeInTheDocument;
         }
     });
@@ -33,7 +33,7 @@ describe('CampusDropdown', () => {
         await waitFor(() => {
             expect(screen.getByRole('button', { name: 'Campuses', expanded: true })).toBeInTheDocument;
 
-            for (let campus in campuses) {
+            for (const campus in campuses) {
                 expect(screen.getByRole('link', { name: campus })).toBeInTheDocument;
             }
         });
@@ -43,7 +43,7 @@ describe('CampusDropdown', () => {
         await waitFor(() => {
             expect(screen.getByRole('button', { name: 'Campuses', expanded: false })).toBeInTheDocument;
 
-            for (let campus in campuses) {
+            for (const campus in campuses) {
                 expect(screen.queryByRole('link', { name: campus })).not.toBeInTheDocument;
             }
         });

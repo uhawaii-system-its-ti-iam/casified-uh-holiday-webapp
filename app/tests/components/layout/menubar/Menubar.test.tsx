@@ -8,7 +8,7 @@ describe ('Menubar', () => {
 
     it('should render a navbar containing a UH Logo, Home, Contact, About, and Campuses dropdown', () => {
         expect(screen.getByRole('navigation')).toBeInTheDocument;
-        expect(screen.getByRole('img')).toHaveAttribute('src', '/holiday/seal.svg');
+        expect(screen.getByRole('presentation')).toHaveAttribute('src', '/holiday/seal.svg');
         expect(screen.getByRole('link', { name: 'hawaii.edu/holidays' })).toHaveAttribute('href', '/');
         expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
         expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');

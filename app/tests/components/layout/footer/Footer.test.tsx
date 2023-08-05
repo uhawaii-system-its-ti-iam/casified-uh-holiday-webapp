@@ -11,5 +11,5 @@ describe ('Footer', () => {
         expect(screen.getByText('University')).toBeInTheDocument;
         expect(screen.getByText('of')).toBeInTheDocument;
         expect(screen.getByText('Hawai‘i')).toBeInTheDocument;
-    })
+    });
 });
