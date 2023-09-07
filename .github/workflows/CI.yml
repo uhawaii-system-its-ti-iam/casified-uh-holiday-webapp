@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+    name: Build with ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Run ESLint
+        run: |
+          cd app
+          npm run lint
+        
+      - name: Run Jest Tests
+        run: |
+          cd app
+          npm run test
