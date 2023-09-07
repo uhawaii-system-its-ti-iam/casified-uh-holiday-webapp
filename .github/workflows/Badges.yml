@@ -1,0 +1,58 @@
+name: Generate badges
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate-badges-on-badges-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Installing dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Delete remote badges branch
+        run: |
+          if [ -n "$(git ls-remote --heads origin badges)" ]; then
+             git push origin --delete badges
+           else
+             echo "'badges' branch does not exist"
+           fi
+
+      - name: Create badges branch
+        run: git checkout -b badges
+
+      - name: Tests
+        run: |
+          cd app
+          npm run test:coverage
+
+      - name: Generating coverage badges
+        uses: jpb06/jest-badges-action@latest
+        with:
+          coverage-summary-path: app/coverage/coverage-summary.json
+          branches: '*'
+          target-branch: badges
+
+      - name: Clean badges branch
+        run: |
+          git config --global user.name 'Groupings Project'
+          git config --global user.email 'actions@noreply.its.hawaii.edu'
+          shopt -s extglob  
+          rm -r !("badges") 
+          rm -rf .github .gitignore
+          git add .
+          git commit -m "Clean badges branch"
+          git push origin badges

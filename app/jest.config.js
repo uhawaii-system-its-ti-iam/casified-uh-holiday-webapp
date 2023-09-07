@@ -11,5 +11,10 @@ module.exports = {
     moduleNameMapper: {
         "@/components/(.*)": "<rootDir>/components/$1",
     },
-    testEnvironment: 'jsdom'
+    collectCoverageFrom: [
+        './components/**',
+        './pages/**',
+    ],
+    testEnvironment: 'jsdom',
+    coverageReporters: ["json-summary"]
 };
