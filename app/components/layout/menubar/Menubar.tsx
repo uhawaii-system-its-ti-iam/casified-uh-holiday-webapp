@@ -9,7 +9,7 @@ const Menubar = () => {
             <Container>
                 <Link href="/" passHref>
                     <Navbar.Brand>
-                        <Image src="/holiday/seal.svg" alt="" fill quality={100} />
+                        <Image src="/holiday/seal.svg" alt="" role="img" fill quality={100} />
                         <p className="uh-nav-app-name">hawaii.edu/holidays</p>
                     </Navbar.Brand>
                 </Link>
