@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8080",
-    "build": "next build",
-    "start": "next start -p 8080",
-    "lint": "next lint",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "dev": "/app/node_modules/.bin/next dev -p 8080",
+    "build": "/app/node_modules/.bin/next build",
+    "start": "/app/node_modules/.bin/next start -p 8080",
+    "lint": "/app/node_modules/.bin/next lint",
+    "test": "/app/node_modules/.bin/jest",
+    "test:coverage": "/app/node_modules/.bin/jest --coverage",
+    "test:watch": "/app/node_modules/.bin/jest --watch"
   },
   "dependencies": {
     "axios": "^1.4.0",
