@@ -32,8 +32,8 @@ jobs:
           npm run test:badges
       - name: git commit and push
         run: |
-          git config --global user.name 'FeimeiChen'
-          git config --global user.email 'FeimeiChen@users.noreply.github.com'
+          git config --global user.name 'Groupings Project'
+          git config --global user.email 'actions@noreply.its.hawaii.edu'
           git checkout --orphan badges
           git branch
           git rm -rf .
