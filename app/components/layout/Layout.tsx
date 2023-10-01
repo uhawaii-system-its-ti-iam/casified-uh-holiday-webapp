@@ -9,7 +9,7 @@ const Layout = ({children}: LayoutProps ) => {
     return ( 
         <div>
             <Menubar />
-                { children }
+            { children }
             <Footer />
         </div> 
     );

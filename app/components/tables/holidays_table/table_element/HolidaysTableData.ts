@@ -4,12 +4,10 @@ import axios from 'axios';
 
 const BASE_URL = "http://localhost:8081/holidaysapi/api/holidays";
 
-class HolidaysTableData {
+export default class HolidaysTableData {
 
-    getTableData(){
+    public static getTableData() {
         return axios.get(BASE_URL);
     }
-
+    
 }
-
-export default new HolidaysTableData();
