@@ -15,6 +15,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.2",
     "camaro": "^6.2.0",
+    "dotenv": "^16.3.1",
     "iron-session": "^6.3.1",
     "next": "13.4.12",
     "react": "18.2.0",
