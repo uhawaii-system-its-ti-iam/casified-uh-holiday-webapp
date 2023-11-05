@@ -8,7 +8,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         res.json(AnonymousUser);
         return;
     }
-    res.status(200).json(req.session.user as User);
+    res.json(req.session.user as User);
 }
  
 export default withSessionRoute(handler);
