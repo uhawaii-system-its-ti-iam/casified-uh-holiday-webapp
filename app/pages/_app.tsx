@@ -1,4 +1,3 @@
-import { SSRProvider } from 'react-bootstrap';
 import type { AppProps } from 'next/app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
@@ -7,13 +6,11 @@ import { CasUserContextProvider } from '@/access/useCasUserContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <SSRProvider>
-            <CasUserContextProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </CasUserContextProvider>
-        </SSRProvider>
+        <CasUserContextProvider>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </CasUserContextProvider>
     );
 }
 

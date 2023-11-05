@@ -1,7 +1,7 @@
 import { config, middleware } from 'middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import * as IronSession from 'iron-session/edge'
-import User, { AnonymousUser } from '@/access/User';
+import User from '@/access/User';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
@@ -20,7 +20,7 @@ describe('middleware', () => {
     it('should redirect the user when not logged-in', async () => {
         const redirectSpy = jest.spyOn(NextResponse, 'redirect');
         jest.spyOn(IronSession, 'getIronSession').mockResolvedValue({
-            user: AnonymousUser,
+            user: undefined,
             destroy: jest.fn(),
             save: jest.fn(),
         });
