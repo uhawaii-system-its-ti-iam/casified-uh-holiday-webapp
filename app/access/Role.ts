@@ -1,6 +1,6 @@
 enum Role {
     ANONYMOUS = "ANONYMOUS",
-    USER = "USER",
+    UH = "UH",
     ADMIN = "ADMIN",
 }
 

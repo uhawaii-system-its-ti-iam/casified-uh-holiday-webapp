@@ -9,7 +9,10 @@ dotenv.config({path: `${os.homedir()}/.${os.userInfo().username}-conf/casified-u
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    basePath: '/holiday'
+    basePath: '/holiday',
+    experimental: {
+        serverComponentsExternalPackages: ['camaro']
+    }
 }
 
 module.exports = nextConfig

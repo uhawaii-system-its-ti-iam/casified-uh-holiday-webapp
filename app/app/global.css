@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: cinzel-regular;
+  src: url(../public/fonts/Cinzel-Regular.ttf);
+}
+
+@font-face {
+  font-family: cormorant-upright-regular;
+  src: url(../public/fonts/CormorantUpright-Regular.ttf);
+}
+
+@layer base {
+  html {
+    @apply relative min-h-full overflow-y-scroll pt-0 !important;
+  }
+
+  body {
+    @apply text-sm bg-white pt-[60px] pb-[50px] !important;
+  }
+
+  button {
+    @apply bg-gray hover:bg-gold-100 !important;
+  }
+
+  a {
+    @apply no-underline !important;
+  }
+
+  h3 {
+    @apply text-gold-100 text-2xl mt-5 mb-[8px] !important;
+  }
+}
+
+.uh-branding-one {
+  @apply text-[1.6em] not-italic tracking-[2.2px] text-gray;
+  font-family: cinzel-regular, serif;
+}
+
+.uh-branding-two {
+  @apply text-[0.8em] not-italic text-gray whitespace-pre;
+  font-family: cormorant-upright-regular, cursive;
+}
+
+.navbar {
+  @apply bg-white border-b-ash border-b border-solid;
+}
+
+.navbar-brand {
+  @apply fixed w-[45px] h-[45px] left-[23px] top-[3px];
+}
+
+.uh-nav-app-name {
+  @apply text-sm inline absolute bg-transparent ml-[67px] mt-3;
+  font-family: 'Courier New', Courier, sans-serif;
+}
+
+.footer {
+  @apply absolute w-full h-[50px] text-center pt-[5px] bottom-0;
+}
+
+.nav-link {
+  @apply mr-3.5;
+}
+
+.container {
+  @apply w-[768px] max-w-screen-md mx-0 px-[15px] !important;
+}
+
+@media screen(sm) {
+  body {
+    @apply bg-[white] pt-[100px] pb-[50px] !important;
+  }
+}
+
+.container {
+  @apply w-[750px] max-w-[750px] mx-auto !important;
+}
+
+.navbar {
+  @apply text-sm mt-[37px];
+}
+
+.navbar-brand {
+  @apply w-[78px] h-[78px] left-[31px] top-1.5;
+}
+
+.navbar-nav {
+  @apply relative left-[22.5px] top-0.5;
+}
+
+.uh-nav-app-name {
+  @apply text-[22px] inline absolute bg-transparent ml-[89px] mt-[33px];
+}
+
+.uh-branding-one {
+  @apply text-[1.8em];
+}
+
+.uh-branding-two {
+  @apply text-[1.0em];
+}
+
+@media screen(md) {
+  .container {
+    @apply w-[970px] max-w-[970px] mx-auto !important;
+  }
+}
+
+@media screen(lg) {
+  .container {
+    @apply w-[1170px] max-w-[1170px] mx-auto !important;
+  }
+}
+
+.dropdown-menu.show {
+  @apply text-sm shadow-[0_6px_12px_rgb(0_0_0_/_18%)] mr-1.5 mt-1.5 rounded-[0_0_2%_2%] !important;
+}
+
+.dropdown-menu {
+  @apply min-w-[10rem] px-0 py-[5px];
+}
+
+.dropdown-item {
+  @apply px-5 py-[3px];
+}
+
+a.dropdown-item:active {
+  @apply text-black bg-off-white;
+}
+
+a.dropdown-toggle::after {
+  @apply align-middle ml-1.5;
+}

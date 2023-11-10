@@ -4,15 +4,18 @@ const { compilerOptions } = require('./tsconfig');
 
 module.exports = {
     rootDir: './',
+    clearMocks: true,
     collectCoverageFrom: [
         './**/*.ts*',
     ],
     coveragePathIgnorePatterns: [
-        "/cypress/",
-        "/tests/"
+        '/cypress/'
     ],
-    coverageReporters: ['json-summary', 'html'],
+    coverageReporters: ['json-summary', 'text', 'html'],
     testEnvironment: 'jsdom',
+    testEnvironmentOptions: {
+        customExportConditions: []
+    },
     transform: {
         '^.+\\.tsx?$': [
             '@swc/jest', 
@@ -22,9 +25,12 @@ module.exports = {
     },
     setupFilesAfterEnv: [
         '@testing-library/jest-dom/extend-expect',
-        '<rootDir>/tests/setupJest.ts',
+        '<rootDir>/jest.setup.ts',
     ],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleDirectories: ["node_modules", "<rootDir>/"],
-    moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths)
+    moduleNameMapper: {
+        ...pathsToModuleNameMapper(compilerOptions.paths),
+        '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+    }
 };

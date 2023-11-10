@@ -1,17 +1,15 @@
+import { cookies } from 'next/headers';
 import { NextResponse, NextRequest } from 'next/server';
-import { getIronSession } from 'iron-session/edge';
-import { sessionOptions } from './access/sessionConfig';
+import { getIronSession } from 'iron-session';
+import { SessionData, sessionOptions } from './access/Session';
 
 export const middleware = async (req: NextRequest) => {
-    const res = NextResponse.next();
-    const session = await getIronSession(req, res, sessionOptions);
+    const session = await getIronSession<SessionData>(cookies(), sessionOptions);
     
     const { user } = session;
     if (!user) {
         return NextResponse.redirect(new URL('/holiday', req.url));
     }
-
-    return res;
 };
   
 export const config = {
