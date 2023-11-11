@@ -10,8 +10,12 @@ const Login = () => {
     return (
         <>
             {!casUserContext.currentUser.roles.includes(Role.USER)
-                ? <Button onClick={() => cas.login()}>Login</Button>
-                : <Button onClick={() => cas.logout()}>Logout ({casUserContext.currentUser.uid})</Button>}
+                ? <Button className="bg-gold-100 hover:bg-gold-50" onClick={() => cas.login()}>
+                    Login
+                </Button>
+                : <Button className="bg-gold-100 hover:bg-gold-50" onClick={() => cas.logout()}>
+                    Logout ({casUserContext.currentUser.uid})
+                </Button>}
         </> 
     );
 }
