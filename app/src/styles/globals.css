@@ -65,7 +65,7 @@ h3 {
   height: 45px;
   top: 3px;
   left: 23px;
-} 
+}
 
 .uh-nav-app-name {
   font-family: 'Courier New', Courier, sans-serif;
@@ -123,7 +123,7 @@ h3 {
     height: 78px;
     top: 6px;
     left: 31px;
-  } 
+  }
 
   .navbar-nav {
     position: relative;
@@ -181,7 +181,7 @@ h3 {
 }
 
 .dropdown-item {
-  padding: 3px 20px !important; 
+  padding: 3px 20px !important;
 }
 
 a.dropdown-item:active {
