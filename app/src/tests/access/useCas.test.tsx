@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { renderHook, waitFor } from '@testing-library/react';
-import useCas from 'src/access/useCas';
-import useCasUserContext, { CasUserContextProvider } from 'src/access/useCasUserContext';
+import useCas from 'access/useCas';
+import useCasUserContext, { CasUserContextProvider } from 'access/useCasUserContext';
 import User from 'src/access/User';
 
 const casUrl = process.env.NEXT_PUBLIC_CAS_URL as string;

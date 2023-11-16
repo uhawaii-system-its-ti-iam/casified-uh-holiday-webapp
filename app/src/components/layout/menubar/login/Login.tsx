@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
-import Role from 'src/access/Role';
-import useCas from 'src/access/useCas';
-import useCasUserContext from 'src/access/useCasUserContext';
+import Role from 'access/Role';
+import useCas from 'access/useCas';
+import useCasUserContext from 'access/useCasUserContext';
 
 const Login = () => {
     const cas = useCas();

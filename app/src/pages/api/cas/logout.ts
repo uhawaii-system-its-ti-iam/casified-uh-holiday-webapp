@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { withSessionRoute } from 'src/access/session';
+import { withSessionRoute } from 'access/session';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 

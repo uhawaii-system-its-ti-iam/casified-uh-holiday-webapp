@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import FaqTable from 'src/components/tables/faq_table/FaqTable';
+import FaqTable from 'components/tables/faq_table/FaqTable';
 
 describe('FaqTable', () => {
     beforeEach(() => {

@@ -1,4 +1,4 @@
-import FaqTable from "src/components/tables/faq_table/FaqTable";
+import FaqTable from "components/tables/faq_table/FaqTable";
 import { Container, Col, Row } from "react-bootstrap";
 
 const Faq = () => {

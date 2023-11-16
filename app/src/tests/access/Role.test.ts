@@ -1,4 +1,4 @@
-import Role from "src/access/Role";
+import Role from "access/Role";
 
 describe('Role', () => {
 

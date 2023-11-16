@@ -1,4 +1,4 @@
-import ContactTable from "src/components/tables/contact_table/ContactTable";
+import ContactTable from "components/tables/contact_table/ContactTable";
 import { Container, Col, Row } from "react-bootstrap";
 
 const Contact = () => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ContactTable from 'src/components/tables/contact_table/ContactTable';
+import ContactTable from 'components/tables/contact_table/ContactTable';
 
 describe('ContactTable', () => {
     beforeEach(() => {

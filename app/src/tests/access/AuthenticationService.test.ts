@@ -1,5 +1,5 @@
-import AuthenticationService from 'src/access/AuthenticationService';
-import User, { AnonymousUser } from 'src/access/User';
+import AuthenticationService from 'access/AuthenticationService';
+import User, { AnonymousUser } from 'access/User';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 const xmlSoapResponse = process.env.XML_SOAP_RESPONSE as string;

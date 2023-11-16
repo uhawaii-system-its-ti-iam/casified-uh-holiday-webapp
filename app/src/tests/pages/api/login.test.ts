@@ -1,8 +1,8 @@
-import withSessionRouteHandler, { handler } from 'src/pages/api/cas/login';
+import withSessionRouteHandler, { handler } from 'pages/api/cas/login';
 import { createMocks } from 'node-mocks-http';
-import { ApiRequest, ApiResponse } from 'src/tests/setupJest';
-import User, { AnonymousUser } from 'src/access/User';
-import Role from 'src/access/Role';
+import { ApiRequest, ApiResponse } from 'tests/setupJest';
+import User, { AnonymousUser } from 'access/User';
+import Role from 'access/Role';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);

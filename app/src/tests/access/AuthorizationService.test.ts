@@ -1,6 +1,6 @@
-import AuthorizationService from 'src/access/AuthorizationService';
-import Role from 'src/access/Role';
-import User from 'src/access/User';
+import AuthorizationService from 'access/AuthorizationService';
+import Role from 'access/Role';
+import User from 'access/User';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 

@@ -1,7 +1,7 @@
 import { config, middleware } from '../../middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import * as IronSession from 'iron-session/edge'
-import User, { AnonymousUser } from 'src/access/User';
+import User, { AnonymousUser } from '../access/User';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { withSessionRoute } from 'src/access/session';
-import { AnonymousUser } from 'src/access/User';
-import User from 'src/access/User';
+import { withSessionRoute } from 'access/session';
+import { AnonymousUser } from 'access/User';
+import User from 'access/User';
 
 export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (!req.session.user) {

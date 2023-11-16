@@ -44,7 +44,7 @@ app/src/.idea
 app/src/.vscode
 
 # package-lock
-package-lock.json
+app/package-lock.json
 
 # api
 api/.classpath

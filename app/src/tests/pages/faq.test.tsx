@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Faq from 'src/pages/faq';
+import Faq from '../../pages/faq';
 
 describe('Faq', () => {
     beforeEach(() => {

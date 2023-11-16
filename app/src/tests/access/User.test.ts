@@ -1,5 +1,5 @@
-import Role from "src/access/Role";
-import { AnonymousUser } from "src/access/User";
+import Role from "access/Role";
+import { AnonymousUser } from "access/User";
 
 describe('User', () => {
 
