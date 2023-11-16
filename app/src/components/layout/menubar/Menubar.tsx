@@ -1,10 +1,10 @@
 import CampusDropdown from './campus-dropdown/CampusDropdown';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import useCasUserContext from 'access/useCasUserContext';
+import useCasUserContext from '../../../access/useCasUserContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import Login from './login/Login';
-import Role from 'access/Role';
+import Role from '../../../access/Role';
 
 const Menubar = () => {
     const casUserContext = useCasUserContext();

@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
-import Layout from 'components/layout/Layout';
-import { CasUserContextProvider } from 'access/useCasUserContext';
-import { AnonymousUser } from 'access/User';
+import Layout from '../../../components/layout/Layout';
+import { CasUserContextProvider } from '../../../access/useCasUserContext';
+import { AnonymousUser } from '../../../access/User';
 
 describe ('Layout', () => {
     beforeAll(() => {

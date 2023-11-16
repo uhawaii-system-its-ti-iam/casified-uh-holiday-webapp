@@ -1,4 +1,4 @@
-import Role from "access/Role";
+import Role from "../../access/Role";
 
 describe('Role', () => {
 

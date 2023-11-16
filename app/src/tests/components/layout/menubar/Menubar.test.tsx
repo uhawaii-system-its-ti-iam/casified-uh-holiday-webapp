@@ -1,7 +1,7 @@
 import { act, render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Menubar from 'components/layout/menubar/Menubar';
-import { CasUserContextProvider } from 'access/useCasUserContext';
-import User, { AnonymousUser } from 'access/User';
+import Menubar from '../../../../components/layout/menubar/Menubar';
+import { CasUserContextProvider } from '../../../../access/useCasUserContext';
+import User, { AnonymousUser } from '../../../../access/User';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Contact from 'pages/contact';
+import Contact from '../../pages/contact';
 
 describe ('Contact', () => {
     beforeEach(() => {

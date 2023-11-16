@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { act, render, renderHook , screen} from '@testing-library/react';
-import useCasUserContext, { CasUserContextProvider } from 'access/useCasUserContext';
-import User, { AnonymousUser } from 'access/User';
+import useCasUserContext, { CasUserContextProvider } from '../../access/useCasUserContext';
+import User, { AnonymousUser } from '../../access/User';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 

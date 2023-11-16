@@ -1,7 +1,7 @@
 import { act, render, screen, fireEvent } from '@testing-library/react';
-import Login from 'components/layout/menubar/login/Login';
-import { CasUserContextProvider } from 'access/useCasUserContext';
-import User, { AnonymousUser } from 'access/User';
+import Login from '../../../../../components/layout/menubar/login/Login';
+import { CasUserContextProvider } from '../../../../../access/useCasUserContext';
+import User, { AnonymousUser } from '../../../../../access/User';
 
 const casUrl = process.env.NEXT_PUBLIC_CAS_URL as string;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;

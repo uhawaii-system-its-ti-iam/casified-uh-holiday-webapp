@@ -1,7 +1,7 @@
-import withSessionRouteHandler, { handler } from 'pages/api/cas/current-user';
+import withSessionRouteHandler, { handler } from '../../../pages/api/cas/current-user';
 import { createMocks } from 'node-mocks-http';
-import { ApiRequest, ApiResponse } from 'tests/setupJest';
-import User, { AnonymousUser } from 'access/User';
+import { ApiRequest, ApiResponse } from '../../../tests/setupJest';
+import User, { AnonymousUser } from '../../../access/User';
 
 const testUser: User = JSON.parse(process.env.TEST_USER_A as string);
 

@@ -1,4 +1,4 @@
-import { withSessionRoute } from 'access/session';
+import { withSessionRoute } from '../../access/session';
 import { withIronSessionApiRoute } from 'iron-session/next';
 jest.mock('iron-session/next');
 

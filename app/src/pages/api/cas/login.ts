@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { withSessionRoute } from 'access/session';
-import AuthenticationService from 'access/AuthenticationService';
-import AuthorizationService from 'access/AuthorizationService';
-import { AnonymousUser } from 'access/User';
+import { withSessionRoute } from '../../../access/session';
+import AuthenticationService from '../../../access/AuthenticationService';
+import AuthorizationService from '../../../access/AuthorizationService';
+import { AnonymousUser } from '../../../access/User';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
