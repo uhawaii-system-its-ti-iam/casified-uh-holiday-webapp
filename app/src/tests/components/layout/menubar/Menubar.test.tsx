@@ -28,7 +28,7 @@ describe ('Menubar', () => {
             expect(screen.getByRole('img')).toHaveAttribute('src', '/holiday/seal.svg');
             expect(screen.getByRole('link', { name: 'hawaii.edu/holidays' })).toHaveAttribute('href', '/');
             expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
-            expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/faq');
+            expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/app/src/pages/faq');
             expect(screen.getByRole('button', { name: 'Campuses' })).toBeInTheDocument;
             expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument;
         });
@@ -46,8 +46,8 @@ describe ('Menubar', () => {
             expect(screen.getByRole('img')).toHaveAttribute('src', '/holiday/seal.svg');
             expect(screen.getByRole('link', { name: 'hawaii.edu/holidays' })).toHaveAttribute('href', '/');
             expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
-            expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
-            expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/faq');
+            expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/app/src/pages/contact');
+            expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/app/src/pages/faq');
             expect(screen.getByRole('button', { name: 'Campuses' })).toBeInTheDocument;
             expect(screen.getByRole('button', { name: `Logout (${testUser.uid})` })).toBeInTheDocument;
         });

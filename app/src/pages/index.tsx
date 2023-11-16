@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Container, Col, Row, Spinner } from 'react-bootstrap';
-import HolidaysTable from "@/components/tables/holidays_table/HolidaysTable";
+import HolidaysTable from "../components/tables/holidays_table/HolidaysTable";
 import useAxiosPromise from '../hooks/useAxiosPromise';
 
 const Home: NextPage = () => {
