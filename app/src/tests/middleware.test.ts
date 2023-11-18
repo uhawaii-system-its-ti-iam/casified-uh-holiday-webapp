@@ -20,7 +20,7 @@ describe('middleware', () => {
     it('should redirect the user when not logged-in', async () => {
         const redirectSpy = jest.spyOn(NextResponse, 'redirect');
         jest.spyOn(IronSession, 'getIronSession').mockResolvedValue({
-            user: AnonymousUser,
+            user: undefined,
             destroy: jest.fn(),
             save: jest.fn(),
         });
