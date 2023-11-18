@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 
-interface filterBarProps {
-    filtering : any
-    setFiltering : any
+interface filterProps {
+    filtering : string
+    setFiltering : Dispatch<SetStateAction<string>>
 }
 
-const FilterBar = ({filtering, setFiltering} : filterBarProps ) => {
+const Filter = ({filtering, setFiltering} : filterProps ) => {
     return (
         <div className="col-sm-3 my-3">
             <input
@@ -19,4 +19,4 @@ const FilterBar = ({filtering, setFiltering} : filterBarProps ) => {
     )
 }
 
-export default FilterBar;
+export default Filter;

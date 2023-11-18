@@ -3,8 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "@/access/*": ["access/*"],
-      "@/components/*": ["components/*"],
-      "@/constants/*": ["constants/*"]
+      "@/components/*": ["components/*"]
     },
     "target": "es5",
     "lib": [

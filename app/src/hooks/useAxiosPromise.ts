@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
-import {URL_DATA_ROOT} from '../constants/constants';
-import axios from './axiosConfig';
+import axios from '../hooks/axiosConfig';
 
 const useAxiosPromise = (url: string) => {
     const [data, setData] = useState(null);
@@ -9,7 +8,7 @@ const useAxiosPromise = (url: string) => {
     useEffect(() => {
         console.log('useAxiosPromise...');
         const aborter = new AbortController();
-        axios.get(URL_DATA_ROOT + url, {signal: aborter.signal})
+        axios.get(process.env.NEXT_PUBLIC_BASE_URL + url, {signal: aborter.signal})
             .then(res => {
                 setData(res.data);
                 setIsLoading(false);
