@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { getIronSession } from 'iron-session/edge';
-import { sessionOptions } from './access/sessionConfig';
+import { sessionOptions } from './src/access/sessionConfig';
+import Role from './src/access/Role';
+
 
 export const middleware = async (req: NextRequest) => {
     const res = NextResponse.next();

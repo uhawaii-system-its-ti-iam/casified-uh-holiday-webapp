@@ -1,46 +1,47 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-app/node_modules
-app/.pnp
-app/pnp.js
+**/node_modules
+app/src/.pnp
+app/src/pnp.js
 
 # testing
-app/coverage
+app/src/coverage
 
 # next.js
-app/.next/
-app/out/
+.next/
+app/src/out/
 
 # production
-app/build
+app/src/build
 
 # misc
-/.DS_Store
-app/.DS_Store
+**/.DS_Store
 app/*.pem
 
 # debug
-app/npm-debug.log*
-app/yarn-debug.log*
-app/yarn-error.log*
-app/.pnpm-debug.log*
+app/src/npm-debug.log*
+app/src/yarn-debug.log*
+app/src/yarn-error.log*
+app/src/.pnpm-debug.log*
 
 # local env files
-app/.env*.local
+app/src/.env*.local
 
 # vercel
-app/.vercel
+app/src/.vercel
 
 # typescript
-app/*.tsbuildinfo
-app/next-env.d.ts
+next-env.d.ts
+
+# Ignore build artifacts
+tsconfig.tsbuildinfo
 
 # IDEs
 .idea
 .vscode
-app/.idea
-app/.vscode
+app/src/.idea
+app/src/.vscode
 
 # package-lock
 app/package-lock.json
@@ -55,4 +56,3 @@ api/*-overrides.properties
 api/output.txt
 api/src/main/resources/static/javascript/tsconfig.json
 api/*.iml
-api/.DS_Store

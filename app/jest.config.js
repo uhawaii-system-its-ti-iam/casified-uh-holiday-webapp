@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { pathsToModuleNameMapper } = require('ts-jest');
-const { compilerOptions } = require('./tsconfig');
+const { compilerOptions } = require('./tsconfig.json');
 
 module.exports = {
-    rootDir: './',
+    rootDir: './src/',
     collectCoverageFrom: [
         './**/*.ts*',
     ],
