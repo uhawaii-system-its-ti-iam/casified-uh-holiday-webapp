@@ -56,3 +56,7 @@ api/output.txt
 api/src/main/resources/static/javascript/tsconfig.json
 api/*.iml
 api/.DS_Store
+
+# cypress
+app/tests/cypress/screenshots/*
+app/tests/cypress/downloads/*
