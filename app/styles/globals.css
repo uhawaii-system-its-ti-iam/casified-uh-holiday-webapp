@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: cinzel-regular;
   src: url(fonts/Cinzel-Regular.ttf);
@@ -8,188 +12,121 @@
   src: url(fonts/CormorantUpright-Regular.ttf);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-  overflow-y: scroll;
-}
+@layer base {
+  html {
+    @apply relative min-h-full overflow-y-scroll pt-0;
+  }
 
-body {
-  font-size: 14px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-  padding-bottom: 50px;
-  background-color: white;
-}
+  body {
+    @apply text-sm bg-white pt-[60px] pb-[50px];
+  }
 
-a {
-  color: #0275d8;
-  text-decoration: none;
-}
+  a {
+    @apply text-link-blue no-underline hover:text-link-blue hover:underline;
+  }
 
-a:hover {
-  color: #0275d8;
-  text-decoration: underline;
-}
-
-h3 {
-  color: #bd9319;
-  font-size: 24px;
-  margin-top: 20px;
+  h3 {
+    @apply text-gold-100 text-2xl mt-5 mb-[8px];
+  }
 }
 
 .uh-branding-one {
+  @apply text-[1.6em] not-italic tracking-[2.2px] text-gray;
   font-family: cinzel-regular, serif;
-  font-size: 1.6em;
-  font-style: normal;
-  letter-spacing: 2.2px;
-  color: #777;
 }
 
 .uh-branding-two {
+  @apply text-[0.8em] not-italic text-gray whitespace-pre;
   font-family: cormorant-upright-regular, cursive;
-  font-size: 0.8em;
-  font-style: normal;
-  color: #777;
-  white-space: pre;
 }
 
 .navbar {
-  background-color: white;
-  border-bottom: 1px solid #e7e7e7;
+  @apply bg-white border-b-ash border-b border-solid;
 }
 
 .navbar-brand {
-  position: fixed;
-  width: 45px;
-  height: 45px;
-  top: 3px;
-  left: 23px;
-} 
+  @apply fixed w-[45px] h-[45px] left-[23px] top-[3px];
+}
 
 .uh-nav-app-name {
+  @apply text-sm inline absolute bg-transparent ml-[67px] mt-3;
   font-family: 'Courier New', Courier, sans-serif;
-  font-size: 14px;
-  display: inline;
-  position: absolute;
-  margin-left: 67px;
-  margin-top: 12px;
-  background-color: transparent;
 }
 
 .footer {
-  position: absolute;
-  padding-top: 5px;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  text-align: center;
+  @apply absolute w-full h-[50px] text-center pt-[5px] bottom-0;
 }
 
 .nav-link {
-  margin-right: 14px;
+  @apply mr-3.5;
 }
 
 .container {
-  width: 768px !important;
-  max-width: 768px !important;
-  padding-right: 15px !important;
-  padding-left: 15px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  @apply w-[768px] max-w-screen-md mx-0 px-[15px] !important;
 }
 
-@media (min-width: 768px) {
+@media screen(sm) {
   body {
-    padding-top: 100px;
-    padding-bottom: 50px;
-    background-color: white;
-  }
-
-  .container {
-    width: 750px !important;
-    max-width: 750px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .navbar {
-    font-size: 14px;
-    margin-top: 37px;
-  }
-
-  .navbar-brand {
-    width: 78px;
-    height: 78px;
-    top: 6px;
-    left: 31px;
-  } 
-
-  .navbar-nav {
-    position: relative;
-    top: 2px;
-    left: 22.5px;
-  }
-
-  .uh-nav-app-name {
-    font-size: 22px;
-    display: inline;
-    position: absolute;
-    margin-left: 89px;
-    margin-top: 33px;
-    background-color: transparent;
-  }
-
-  .uh-branding-one {
-    font-size: 1.8em;
-  }
-
-  .uh-branding-two {
-    font-size: 1.0em;
+    @apply bg-[white] pt-[100px] pb-[50px] !important;
   }
 }
 
-@media (min-width: 992px) {
+.container {
+  @apply w-[750px] max-w-[750px] mx-auto !important;
+}
+
+.navbar {
+  @apply text-sm mt-[37px];
+}
+
+.navbar-brand {
+  @apply w-[78px] h-[78px] left-[31px] top-1.5;
+}
+
+.navbar-nav {
+  @apply relative left-[22.5px] top-0.5;
+}
+
+.uh-nav-app-name {
+  @apply text-[22px] inline absolute bg-transparent ml-[89px] mt-[33px];
+}
+
+.uh-branding-one {
+  @apply text-[1.8em];
+}
+
+.uh-branding-two {
+  @apply text-[1.0em];
+}
+
+@media screen(md) {
   .container {
-      width: 970px !important;
-      max-width: 970px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+    @apply w-[970px] max-w-[970px] mx-auto !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media screen(lg) {
   .container {
-      width: 1170px !important;
-      max-width: 1170px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+    @apply w-[1170px] max-w-[1170px] mx-auto !important;
   }
 }
 
 .dropdown-menu.show {
-  margin-top: 6px !important;
-  margin-right: 6px !important;
-  font-size: 14px;
-  border-radius: 0 0 2% 2%;
-  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  @apply text-sm shadow-[0_6px_12px_rgb(0_0_0_/_18%)] mr-1.5 mt-1.5 rounded-[0_0_2%_2%];
 }
 
 .dropdown-menu {
-  min-width: 10rem !important;
-  padding: 5px 0 !important;
+  @apply min-w-[10rem] px-0 py-[5px];
 }
 
 .dropdown-item {
-  padding: 3px 20px !important; 
+  @apply px-5 py-[3px];
 }
 
 a.dropdown-item:active {
-  color: black;
-  background-color: #e9ecef;
+  @apply text-black bg-off-white;
 }
 
 a.dropdown-toggle::after {
-  vertical-align: middle;
-  margin-left: 6px;
+  @apply align-middle ml-1.5;
 }
