@@ -7,7 +7,11 @@ module.exports = {
     collectCoverageFrom: [
         './**/*.ts*',
     ],
-    coverageReporters: ['json-summary'],
+    coveragePathIgnorePatterns: [
+        "/cypress/",
+        "/tests/"
+    ],
+    coverageReporters: ['json-summary', 'html'],
     testEnvironment: 'jsdom',
     transform: {
         '^.+\\.tsx?$': [
