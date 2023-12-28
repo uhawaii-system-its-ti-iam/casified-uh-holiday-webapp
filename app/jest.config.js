@@ -9,7 +9,9 @@ module.exports = {
         './**/*.ts*',
     ],
     coveragePathIgnorePatterns: [
-        '/cypress/'
+        '/app/.next/',
+        '/cypress/',
+        'cypress.config.ts'
     ],
     coverageReporters: ['json-summary', 'text', 'html'],
     testEnvironment: 'jsdom',
@@ -25,7 +27,7 @@ module.exports = {
     },
     setupFilesAfterEnv: [
         '@testing-library/jest-dom/extend-expect',
-        '<rootDir>/jest.setup.ts',
+        '<rootDir>/jest.setup.tsx',
     ],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleDirectories: ["node_modules", "<rootDir>/"],

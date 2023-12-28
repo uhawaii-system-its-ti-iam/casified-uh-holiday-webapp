@@ -20,7 +20,8 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": { /*to be modified based on the rules we want to add or remove*/
+    "rules": { // to be modified based on the rules we want to add or remove
+      "@next/next/no-head-element": "off",
       "arrow-parens": "off",
       "func-names": "off",
       "linebreak-style": "off",
