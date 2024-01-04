@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OrderBy;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -53,6 +53,9 @@ public class Holiday implements Serializable {
     @Column(name = "official_date")
     @JsonSerialize(using = HolidayDateSerializer.class)
     private LocalDate officialDate;
+
+    @Column(name = "official_year", nullable = false)
+    private Integer officialYear;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "holiday_type",
@@ -164,6 +167,11 @@ public class Holiday implements Serializable {
             return Dates.yearOfDate(officialDate);
         }
         return null;
+    }
+
+    @Transient
+    public void addType(Type type) {
+        this.types.add(type);
     }
 
     @Override
