@@ -2,8 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/access/*": ["access/*"],
-      "@/components/*": ["components/*"]
+      "@/access/*": [
+        "access/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -22,7 +26,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",

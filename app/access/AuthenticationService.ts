@@ -1,46 +1,50 @@
-import User, { AnonymousUser } from './User';
+'use server';
+
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { IronSession, getIronSession } from 'iron-session';
+import { SessionData, sessionOptions } from './Session';
+import User, { anonymousUser } from './User';
+import { validateTicket } from './Saml11Validator';
+import { setRoles } from './AuthorizationService';
 import Role from './Role';
-import uniqid from 'uniqid';
-import { format } from 'util';
-import { transform } from 'camaro';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 const casUrl = process.env.NEXT_PUBLIC_CAS_URL as string;
-const samlRequestTemplate = process.env.NEXT_PUBLIC_SAML_REQUEST_TEMPLATE as string;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
-export default class AuthenticationService {
-
-    public static validateTicket = async (ticket: string) => {
-        const samlValidateUrl = `${casUrl}/samlValidate?TARGET=${encodeURIComponent(`${baseUrl}/api/cas/login`)}`;
-        const samlResponseTemplate = {
-            name: '//*[local-name() = "Attribute"][@AttributeName="cn"]',
-            firstName: '//*[local-name() = "Attribute"][@AttributeName="givenName"]',
-            lastName: '//*[local-name() = "Attribute"][@AttributeName="sn"]',
-            uid: '//*[local-name() = "Attribute"][@AttributeName="uid"]',
-            uhUuid: '//*[local-name() = "Attribute"][@AttributeName="uhUuid"]',
-        };
-
-        const currentDate = new Date().toISOString();
-        const samlRequestBody = format(samlRequestTemplate, `${uniqid()}.${currentDate}`, currentDate, ticket);
-
-        try {
-            const response = await fetch(samlValidateUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/xml' },
-                body: samlRequestBody,
-            });
-            const data = await response.text();
-            const casUser = await transform(data, samlResponseTemplate);
-
-            return {
-                ...casUser,
-                roles: [Role.USER],
-            } as User;
-        
-        } catch(error) {
-            return AnonymousUser;
-        }
+export const getCurrentUser = async (): Promise<User> => {
+    const session = await getSession();
+    if (!session.user) {
+        return anonymousUser;
     }
-    
+    return session.user;
 }
 
+export const login = (): void => {
+    redirect(`${casUrl}/login?service=${encodeURIComponent(`${baseUrl}/api/cas/login`)}`);
+}
+
+export const logout = (): void => {
+    redirect(`${casUrl}/logout?service=${encodeURIComponent(`${baseUrl}/api/cas/logout`)}`);
+}
+
+export const handleLogin = async (ticket: string): Promise<void> => {
+    const user = await validateTicket(ticket);
+    if (user.roles.includes(Role.ANONYMOUS)) {
+        return;
+    }
+    setRoles(user);
+
+    const session = await getSession();
+    session.user = user;
+    await session.save();
+};
+    
+export const handleLogout = async (): Promise<void> => {
+    const session = await getSession();
+    session.destroy();
+}
+
+const getSession = async (): Promise<IronSession<SessionData>> => {
+    return await getIronSession<SessionData>(cookies(), sessionOptions);
+}

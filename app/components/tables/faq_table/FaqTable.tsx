@@ -3,11 +3,13 @@ import { Table } from "react-bootstrap";
 const FaqTable = () => {
     // General Questions
     const email = 'duckart@hawaii.edu';
+
     // Resources
     const githubRepo = 'https://github.com/uhawaii-system-its-ti-iam/casified-uh-holiday-webapp';
     const holidaysDesignated = 'https://www.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0008/HRS_0008-0001.htm';
     const observanceHolidays = 'https://www.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/HRS0008/HRS_0008-0002.htm';
     const stateObservedHolidays = 'http://dhrd.hawaii.gov/state-observed-holidays/';
+    
     // Technologies
     const springFrameworkGuide = 'https://docs.spring.io/spring-framework/docs/5.3.14/reference/html/';
     const springFrameworkAPI = 'https://docs.spring.io/spring-framework/docs/5.3.14/javadoc-api/';

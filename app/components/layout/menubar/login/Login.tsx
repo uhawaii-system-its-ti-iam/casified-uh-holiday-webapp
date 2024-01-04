@@ -1,23 +1,21 @@
+'use client';
+
 import { Button } from 'react-bootstrap';
 import Role from '@/access/Role';
-import useCas from '@/access/useCas';
-import useCasUserContext from '@/access/useCasUserContext';
+import User from '@/access/User';
+import { login, logout } from '@/access/AuthenticationService';
 
-const Login = () => {
-    const cas = useCas();
-    const casUserContext = useCasUserContext();
+const Login = ({ 
+    currentUser 
+}: {
+    currentUser: User;
+}) => (
+    <>
+        {!currentUser.roles.includes(Role.UH)
+            ? <Button onClick={() => login()}>Login</Button>
+            : <Button onClick={() => logout()}>Logout ({currentUser.uid})</Button>}
+    </> 
+);
 
-    return (
-        <>
-            {!casUserContext.currentUser.roles.includes(Role.USER)
-                ? <Button className="bg-gold-100 hover:bg-gold-50" onClick={() => cas.login()}>
-                    Login
-                </Button>
-                : <Button className="bg-gold-100 hover:bg-gold-50" onClick={() => cas.logout()}>
-                    Logout ({casUserContext.currentUser.uid})
-                </Button>}
-        </> 
-    );
-}
 
 export default Login;

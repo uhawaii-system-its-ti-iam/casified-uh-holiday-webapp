@@ -6,16 +6,16 @@ type User = {
     lastName: string,
     uid: string,
     uhUuid: string,
-    roles: Role[],
+    roles: Role[]
 }
 
-export const AnonymousUser: User = {
+export const anonymousUser: User = {
     name: '',
     firstName: '',
     lastName: '',
     uid: '',
     uhUuid: '',
-    roles: [Role.ANONYMOUS],
+    roles: [Role.ANONYMOUS]
 }
 
 export default User;

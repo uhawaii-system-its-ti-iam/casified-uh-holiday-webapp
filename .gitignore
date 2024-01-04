@@ -58,5 +58,5 @@ api/*.iml
 api/.DS_Store
 
 # cypress
-app/tests/cypress/screenshots/*
-app/tests/cypress/downloads/*
+app/cypress/screenshots/*
+app/cypress/downloads/*

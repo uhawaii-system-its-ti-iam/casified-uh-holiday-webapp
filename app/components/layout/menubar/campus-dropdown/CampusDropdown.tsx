@@ -1,4 +1,6 @@
-import NavDropdown from 'react-bootstrap/NavDropdown';
+'use client';
+
+import { NavDropdown } from 'react-bootstrap';
 
 const CampusDropdown = () => {
     return ( 
