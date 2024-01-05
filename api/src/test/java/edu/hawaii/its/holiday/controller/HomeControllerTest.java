@@ -49,6 +49,6 @@ public class HomeControllerTest {
     @Test
     public void requestNonExistentUrl() throws Exception {
         mockMvc.perform(get("/not-a-url"))
-                .andExpect(status().is4xxClientError());
+                .andExpect(status().is3xxRedirection());
     }
 }

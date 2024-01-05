@@ -1,4 +1,4 @@
-const IndexPage = () => {
+const IndexPage = async () => {
     return (
         null
     )

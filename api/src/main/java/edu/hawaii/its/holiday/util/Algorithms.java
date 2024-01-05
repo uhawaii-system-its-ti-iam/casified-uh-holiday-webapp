@@ -63,11 +63,6 @@ public final class Algorithms {
         return observedDay(localDate);
     }
 
-    public static LocalDate observedDiscoverersDay(int year) {
-        LocalDate localDate = mondayOccurence(year, Month.OCTOBER, 2);
-        return observedDay(localDate);
-    }
-
     public static LocalDate observedElectionDay(int year) {
         if (year % 2 != 0) {
             throw new IllegalArgumentException("Year must be even.");

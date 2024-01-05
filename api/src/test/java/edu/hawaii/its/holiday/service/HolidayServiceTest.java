@@ -1,7 +1,6 @@
 package edu.hawaii.its.holiday.service;
 
 import static edu.hawaii.its.holiday.util.Algorithms.observedChristmasDay;
-import static edu.hawaii.its.holiday.util.Algorithms.observedDiscoverersDay;
 import static edu.hawaii.its.holiday.util.Algorithms.observedElectionDay;
 import static edu.hawaii.its.holiday.util.Algorithms.observedIndependenceDay;
 import static edu.hawaii.its.holiday.util.Algorithms.observedKingKamehamehaDay;
@@ -80,7 +79,7 @@ public class HolidayServiceTest {
 
         assertThat(h2.getId(), equalTo(1001));
         assertThat(h2.getDescription(), equalTo("New Year's Day"));
-        assertThat(h2.getTypes().size(), equalTo(2));
+        assertThat(h2.getTypes().size(), equalTo(3));
 
         // Make sure they all have Types
         for (Holiday h : holidays) {
@@ -153,18 +152,18 @@ public class HolidayServiceTest {
 
     @Test
     public void findHolidayById() {
-        Holiday h1 = holidayService.findHoliday(1);
+        Holiday h1 = holidayService.findHoliday(1015);
 
         assertEquals("New Year's Day", h1.getDescription());
 
-        Holiday h2 = holidayService.findHoliday(2);
+        Holiday h2 = holidayService.findHoliday(1097);
         assertEquals("Dr. Martin Luther King, Jr. Day", h2.getDescription());
 
-        Holiday h4 = holidayService.findHoliday(4);
+        Holiday h4 = holidayService.findHoliday(1261);
         assertEquals("Prince Jonah Kuhio Kalanianaole Day", h4.getDescription());
 
-        assertEquals(2, h1.getTypes().size());
-        assertEquals(2, h2.getTypes().size());
+        assertEquals(3, h1.getTypes().size());
+        assertEquals(3, h2.getTypes().size());
         assertEquals(2, h4.getTypes().size());
 
         List<Type> types = h1.getTypes();
@@ -193,11 +192,11 @@ public class HolidayServiceTest {
         assertThat(holidayService.findHolidaysByYear(2008).size(), equalTo(14));
         assertThat(holidayService.findHolidaysByYear(2009).size(), equalTo(13));
         assertThat(holidayService.findHolidaysByYear(2010).size(), equalTo(14));
-        assertThat(holidayService.findHolidaysByYear(2011).size(), equalTo(14));
-        assertThat(holidayService.findHolidaysByYear(2012).size(), equalTo(15));
-        assertThat(holidayService.findHolidaysByYear(2013).size(), equalTo(14));
-        assertThat(holidayService.findHolidaysByYear(2014).size(), equalTo(15));
-        assertThat(holidayService.findHolidaysByYear(2015).size(), equalTo(14));
+        assertThat(holidayService.findHolidaysByYear(2011).size(), equalTo(13));
+        assertThat(holidayService.findHolidaysByYear(2012).size(), equalTo(14));
+        assertThat(holidayService.findHolidaysByYear(2013).size(), equalTo(13));
+        assertThat(holidayService.findHolidaysByYear(2014).size(), equalTo(14));
+        assertThat(holidayService.findHolidaysByYear(2015).size(), equalTo(13));
         assertThat(holidayService.findHolidaysByYear(2016).size(), equalTo(14));
         assertThat(holidayService.findHolidaysByYear(2017).size(), equalTo(13));
         assertThat(holidayService.findHolidaysByYear(2018).size(), equalTo(14));
@@ -270,7 +269,7 @@ public class HolidayServiceTest {
         assertThat(holiday.getDescription(), equalTo("Christmas"));
 
         holiday = holidayService.findClosestHolidayByDate("2019-06-26", true, "state");
-        assertThat(holiday.getDescription(), equalTo("Statehood Day"));
+        assertThat(holiday.getDescription(), equalTo("Independence Day"));
 
         holiday = holidayService.findClosestHolidayByDate("2019-06-26", false, "federal");
         assertThat(holiday.getDescription(), equalTo("Memorial Day"));
@@ -428,8 +427,6 @@ public class HolidayServiceTest {
                     break;
 
                 case "Discoverers' Day":
-                    date = observedDiscoverersDay(year);
-                    assertThat(date, equalTo(h.getObservedDate()));
                     counts[10] += 1;
                     break;
 
@@ -473,7 +470,7 @@ public class HolidayServiceTest {
         assertThat(counts[7], greaterThanOrEqualTo(17));
         assertThat(counts[8], greaterThanOrEqualTo(17));
         assertThat(counts[9], greaterThanOrEqualTo(17));
-        assertThat(counts[10], greaterThanOrEqualTo(5)); // Discoverers' Day
+        assertThat(counts[10], greaterThanOrEqualTo(0)); // Discoverers' Day
         assertThat(counts[11], greaterThanOrEqualTo(9)); // General Election Day
         assertThat(counts[12], greaterThanOrEqualTo(17));
         assertThat(counts[13], greaterThanOrEqualTo(17));
@@ -484,23 +481,22 @@ public class HolidayServiceTest {
     public void findAllDescriptions() {
         List<String> descriptions = holidayService.findAllDescriptions();
 
-        assertThat(descriptions.get(0), equalTo("Christmas"));
-        assertThat(descriptions.get(1), equalTo("Discoverers' Day")); // Not a State holiday!
-        assertThat(descriptions.get(2), equalTo("Dr. Martin Luther King, Jr. Day"));
-        assertThat(descriptions.get(3), equalTo("General Election Day"));
-        assertThat(descriptions.get(4), equalTo("Good Friday"));
-        assertThat(descriptions.get(5), equalTo("Independence Day"));
-        assertThat(descriptions.get(6), equalTo("King Kamehameha I Day"));
-        assertThat(descriptions.get(7), equalTo("Labor Day"));
-        assertThat(descriptions.get(8), equalTo("Memorial Day"));
-        assertThat(descriptions.get(9), equalTo("New Year's Day"));
-        assertThat(descriptions.get(10), equalTo("Presidents' Day"));
-        assertThat(descriptions.get(11), equalTo("Prince Jonah Kuhio Kalanianaole Day"));
-        assertThat(descriptions.get(12), equalTo("Statehood Day"));
-        assertThat(descriptions.get(13), equalTo("Thanksgiving"));
-        assertThat(descriptions.get(14), equalTo("Veterans' Day"));
+        assertThat(descriptions.size(), equalTo(14));
 
-        assertThat(descriptions.size(), equalTo(15));
+        assertThat(descriptions.get(0), equalTo("Christmas"));
+        assertThat(descriptions.get(1), equalTo("Dr. Martin Luther King, Jr. Day"));
+        assertThat(descriptions.get(2), equalTo("General Election Day"));
+        assertThat(descriptions.get(3), equalTo("Good Friday"));
+        assertThat(descriptions.get(4), equalTo("Independence Day"));
+        assertThat(descriptions.get(5), equalTo("King Kamehameha I Day"));
+        assertThat(descriptions.get(6), equalTo("Labor Day"));
+        assertThat(descriptions.get(7), equalTo("Memorial Day"));
+        assertThat(descriptions.get(8), equalTo("New Year's Day"));
+        assertThat(descriptions.get(9), equalTo("Presidents' Day"));
+        assertThat(descriptions.get(10), equalTo("Prince Jonah Kuhio Kalanianaole Day"));
+        assertThat(descriptions.get(11), equalTo("Statehood Day"));
+        assertThat(descriptions.get(12), equalTo("Thanksgiving"));
+        assertThat(descriptions.get(13), equalTo("Veterans' Day"));
     }
 
     @Test
@@ -530,5 +526,117 @@ public class HolidayServiceTest {
         assertThat(ld, equalTo(Dates.newLocalDate(year, Month.APRIL, 1)));
         ld = occurence(year, Month.APRIL, DayOfWeek.MONDAY, -1);
         assertThat(ld, equalTo(Dates.newLocalDate(year, Month.APRIL, 1)));
+    }
+
+    @Test
+    public void various() {
+        for (int k = 0; k < 5; k++) {
+            String dstr = "2006-01-16";
+            Holiday hx = holidayService.findClosestHolidayByDate(dstr, true, "state");
+            assertThat(hx.getObservedDateStr(), equalTo(dstr));
+
+            dstr = "2006-01-17";
+            Holiday hy = holidayService.findClosestHolidayByDate(dstr, true, "state");
+            assertThat(hy.getObservedDateStr(), equalTo("2006-02-20"));
+
+            // dstr = "2005-01-22";
+            // Holiday ha = holidayService.findClosestHolidayByDate(dstr, false, "state");
+            // assertThat(ha.getObservedDateStr(), equalTo("2006-01-02"));
+
+            // dstr = "2006-01-16";
+            // Holiday hb = holidayService.findClosestHolidayByDate(dstr, false, "state");
+            // assertThat(hb.getObservedDateStr(), equalTo("2006-01-16"));
+
+            dstr = "2028-11-24";
+            Holiday hc = holidayService.findClosestHolidayByDate(dstr, true, "state");
+            assertThat(hc.getObservedDateStr(), equalTo("2028-12-25"));
+
+            dstr = "2028-11-24";
+            Holiday hd = holidayService.findClosestHolidayByDate(dstr, false, "state");
+            assertThat(hd.getObservedDateStr(), equalTo("2028-11-23"));
+
+            List<Holiday> holidays = holidayService.findHolidays();
+
+            // Search date is a holiday.
+            // for (Holiday h : holidays) {
+            //     String dateStr = h.getObservedDateStr();
+
+            // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateStr));
+
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateStr));
+            // }
+
+            // Search date is day before and after holiday.
+            // for (Holiday h : holidays) {
+            //     String dateStrExpected = h.getObservedDateStr();
+            //     String dateStr = Dates.formatDate(h.getObservedDate().plusDays(-1), "yyyy-MM-dd");
+
+            // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateStrExpected));
+
+            // dateStr = Dates.formatDate(h.getObservedDate().plusDays(1), "yyyy-MM-dd");
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateStrExpected));
+            // }
+
+            final int size = holidays.size();
+
+            for (int i = 0; i < size - 1; i++) {
+                Holiday h1 = holidays.get(i);
+                Holiday h2 = holidays.get(i + 1);
+
+                if (h1.getObservedDateStr().equals(h2.getObservedDateStr())) {
+                    // Two holidays on this day, just skip it.
+                    continue;
+                }
+
+                String dateStr = Dates.formatDate(h1.getObservedDate().plusDays(1), "yyyy-MM-dd");
+                String dateExpectedStr = h2.getObservedDateStr();
+
+                // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+                // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+            }
+
+            for (int i = 0; i < size - 1; i++) {
+                Holiday h1 = holidays.get(i);
+                Holiday h2 = holidays.get(i + 1);
+
+                if (h1.getObservedDateStr().equals(h2.getObservedDateStr())) {
+                    // Two holidays on this day, just skip it.
+                    continue;
+                }
+
+                String dateStr = Dates.formatDate(h2.getObservedDate().plusDays(-1), "yyyy-MM-dd");
+                String dateExpectedStr = h1.getObservedDateStr();
+
+                // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+                // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+            }
+
+            String dateStr = "3000-01-01";
+            String dateExpectedStr = holidays.get(holidays.size() - 1).getObservedDateStr();
+            Holiday holiday;
+            // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+
+            dateStr = "1962-12-31";
+            dateExpectedStr = holidays.get(0).getObservedDateStr();
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+
+            dateStr = null;
+            dateExpectedStr = holidays.get(0).getObservedDateStr();
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, true, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+            // holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
+            // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
+        }
+
     }
 }

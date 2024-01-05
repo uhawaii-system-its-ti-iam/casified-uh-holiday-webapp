@@ -39,6 +39,23 @@ public class TypeTest {
     }
 
     @Test
+    public void addType() {
+        Type type = new Type();
+        type.setId(1);
+        type.setDescription("test-type");
+        type.setVersion(22);
+        Holiday holiday = new Holiday();
+        assertThat(holiday.getTypes().size(), equalTo(0));
+        holiday.addType(type);
+        assertThat(holiday.getTypes().size(), equalTo(1));
+        Type t = holiday.getTypes().get(0);
+        assertThat(t.getId(), equalTo(1));
+        assertThat(t.getDescription(), equalTo("test-type"));
+        assertThat(t.getVersion(), equalTo(22));
+        assertThat(t.getSortId(), equalTo(null));
+    }
+    
+    @Test
     public void testToString() {
         assertThat(type.toString(), containsString("id=null, description=null"));
 
