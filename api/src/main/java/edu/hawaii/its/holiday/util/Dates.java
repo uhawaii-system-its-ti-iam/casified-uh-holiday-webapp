@@ -15,6 +15,7 @@ import java.util.Date;
 public final class Dates {
 
     public static final String DATE_FORMAT = "MMMM dd, yyyy, EEEE";
+
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 
     // Private constructor; prevent instantiation.

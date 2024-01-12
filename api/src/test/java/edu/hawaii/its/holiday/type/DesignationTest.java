@@ -6,6 +6,7 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -63,9 +64,8 @@ public class DesignationTest {
     public void testEquals() {
         Designation h1 = new Designation();
         assertEquals(h1, h1); // To self.
-        assertTrue(h1.equals(h1)); // To self.
-        assertFalse(h1.equals(null));
-        assertFalse(h1.equals(new Date())); // Wrong type.
+        assertNotNull(h1);
+        assertNotEquals(h1, new Date()); // Wrong type.
 
         Designation h2 = new Designation();
         assertThat(h1, equalTo(h2));

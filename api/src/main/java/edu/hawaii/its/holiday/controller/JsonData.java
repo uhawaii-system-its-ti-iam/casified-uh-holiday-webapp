@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class JsonData<E> {
 
     private String key;
+
     private E data;
 
     public JsonData(String key, E data) {

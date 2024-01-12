@@ -14,6 +14,7 @@ import edu.hawaii.its.holiday.util.Dates;
 public class HolidayDateSerializer extends StdSerializer<LocalDate> {
 
     private static final long serialVersionUID = 159L;
+
     private DateTimeFormatter format = DateTimeFormatter.ofPattern(Dates.DATE_FORMAT);
 
     public HolidayDateSerializer() {
