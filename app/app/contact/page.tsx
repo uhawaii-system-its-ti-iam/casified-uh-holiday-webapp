@@ -1,15 +1,13 @@
-import ContactTable from '@/components/tables/contact_table/ContactTable';
-import { Container, Col, Row } from 'react-bootstrap';
+import ContactAccordion from '@/components/accordions/contact_accordion/ContactAccordion';
+import { Container, Stack } from '@mantine/core';
 
 const ContactPage = () => {
     return ( 
-        <Container fluid>
-            <Row>
-                <Col xs={{ span: 10, offset: 1 }}>
-                    <h3>Contact Us</h3>
-                    <ContactTable />
-                </Col>
-            </Row>
+        <Container>
+            <Stack>
+                <h1>Contact Us</h1>
+                <ContactAccordion />
+            </Stack>
         </Container>
     );
 }

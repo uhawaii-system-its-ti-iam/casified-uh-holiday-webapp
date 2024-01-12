@@ -35,6 +35,8 @@
   },
   "include": [
     "next-env.d.ts",
+    "**/__mocks__/*.ts",
+    "**/__mocks__/*.tsx",
     "**/*.test.ts",
     "**/*.test.tsx",
     ".next/types/**/*.ts"

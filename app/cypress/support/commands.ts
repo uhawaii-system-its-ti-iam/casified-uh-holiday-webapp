@@ -16,7 +16,7 @@ Cypress.Commands.addAll({
 
     loginNoMFA: (username, password) => {
         cy.visit('http://localhost:8080/holiday');
-        cy.get('nav').contains('Login').click();
+        cy.get('header').contains('Login').click();
         cy.wait(5000);
         cy.origin('https://cas-test.its.hawaii.edu', () => {
             cy.get('input[id="username"]').type(Cypress.env().username, { log: false });

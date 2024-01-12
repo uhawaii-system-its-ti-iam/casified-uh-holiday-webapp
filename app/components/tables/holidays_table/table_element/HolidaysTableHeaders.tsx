@@ -1,14 +1,14 @@
-export const HolidaysTableHeaders = [
+export const holidaysTableHeaders = [
     {
-        Header: 'Holiday',
-        accessor: 'holiday'
+        header: 'Holiday',
+        accessorKey: 'description'
     },
     {
-        Header: 'Observed',
-        accessor: 'observed'
+        header: 'Observed',
+        accessorKey: 'observedDateFull'
     },
     {
-        Header: 'Official',
-        accessor: 'official'
+        header: 'Official',
+        accessorKey: 'officialDateFull'
     }
 ]

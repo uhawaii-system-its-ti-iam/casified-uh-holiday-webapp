@@ -5,7 +5,7 @@ describe('about page test', () => {
     });
 
     it('should have correct email', () => {
-        cy.get('td:contains(Send email: )').children('a').each((element) => {
+        cy.get('.mantine-Accordion-content:contains(Send email: )').children('a').each((element) => {
             cy.wrap(element)
                 .should('contain.text', 'duckart@hawaii.edu')
                 .should('have.attr', 'href', 'mailto:duckart@hawaii.edu');
