@@ -6,16 +6,16 @@ jest.mock('@/components/layout/header/Header');
 
 describe ('Layout', () => { 
 
-    beforeEach(() => {
-        render(<Layout><p>Hello World!</p></Layout>);
-    });
-
     it('should render the menubar and footer', () => {
+        render(<Layout />);
+
         expect(screen.getByRole('banner')).toBeInTheDocument();
         expect(screen.getByRole('contentinfo')).toBeInTheDocument();
     });
 
     it('should render components nested inside between the menubar and footer', () => {
+        render(<Layout><p>Hello World!</p></Layout>);
+
         expect(screen.getByRole('banner')).toBeInTheDocument();
         expect(screen.getByText('Hello World!')).toBeInTheDocument();
         expect(screen.getByRole('contentinfo')).toBeInTheDocument();

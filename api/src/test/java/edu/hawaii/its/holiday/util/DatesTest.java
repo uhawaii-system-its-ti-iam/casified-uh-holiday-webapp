@@ -23,11 +23,15 @@ import org.junit.jupiter.api.Test;
 public class DatesTest {
 
     protected LocalDate christmasLocalDate;
+
     protected LocalDate newYearsDay2000LocalDate;
+
     protected LocalDate dayMusicDiedLocalDate;
 
     protected Date christmasDate;
+
     protected Date dayMusicDiedDate;
+
     protected Date newYearsDay2000Date;
 
     @BeforeEach

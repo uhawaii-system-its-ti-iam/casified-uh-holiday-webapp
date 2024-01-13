@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 public class Employee implements Serializable {
 
     public static final long serialVersionUID = 2L;
+
     private Long uhNumber;
 
     public Employee() {

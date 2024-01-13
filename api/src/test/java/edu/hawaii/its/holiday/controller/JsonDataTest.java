@@ -8,6 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -68,21 +69,20 @@ public class JsonDataTest {
         assertNotNull(jd1.getData());
         assertNotNull(jd2.getData());
         assertNotSame(jd1.getData(), jd2.getData());
-        assertTrue(jd1.equals(jd2));
-        assertTrue(jd1.equals(jd2));
-        assertTrue(jd2.equals(jd1));
+        assertEquals(jd1, jd2);
+        assertEquals(jd2, jd1);
         assertEquals(jd1, jd1); // Same object.
-        assertFalse(jd1.equals(null));
+        assertNotNull(jd1);
 
         // Null key (not typical).
         jd1 = new JsonData<>(null, d1);
         jd2 = new JsonData<>(null, d1);
         assertEquals(jd1, jd2);
-        assertTrue(jd1.equals(jd2));
+        assertEquals(jd1, jd2);
 
         d1 = Dates.newLocalDate(2016, Month.DECEMBER, 25);
         jd1 = new JsonData<>(d1);
-        assertFalse(jd1.equals(new Date())); // Wrong type.
+        assertNotEquals(jd1, new Date()); // Wrong type.
 
         // Null data.
         jd1 = new JsonData<>("key", d2);
@@ -92,13 +92,13 @@ public class JsonDataTest {
         assertNull(jd2.getData());
         assertThat(jd1, not(equalTo(jd2)));
         assertThat(jd2, not(equalTo(jd1)));
-        assertFalse(jd2.equals(jd1));
-        assertFalse(jd1.equals(jd2));
+        assertNotEquals(jd2, jd1);
+        assertNotEquals(jd1, jd2);
 
         LocalDate d3 = Dates.newLocalDate(2016, Month.DECEMBER, 26);
         JsonData<LocalDate> jd3 = new JsonData<>(d3);
-        assertFalse(jd2.equals(jd3));
-        assertFalse(jd3.equals(jd2));
+        assertNotEquals(jd2, jd3);
+        assertNotEquals(jd3, jd2);
 
         jd1 = new JsonData<>("key", null);
         jd2 = new JsonData<>("key", null);
@@ -106,8 +106,8 @@ public class JsonDataTest {
 
         jd1 = new JsonData<>(null, d1);
         jd2 = new JsonData<>(d1);
-        assertFalse(jd1.equals(jd2));
-        assertFalse(jd2.equals(jd1));
+        assertNotEquals(jd1, jd2);
+        assertNotEquals(jd2, jd1);
     }
 
     @Test
