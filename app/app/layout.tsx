@@ -1,5 +1,4 @@
 import './global.css';
-
 import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
 import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
@@ -10,12 +9,12 @@ const theme = createTheme({
     primaryColor: 'blue'
 });
   
-const RootLayout = ({ 
+const RootLayout = ({
     children
 }: {
     children?: React.ReactNode
 }) => (
-    <html lang="en">  
+    <html lang="en">
         <head>
             <ColorSchemeScript defaultColorScheme="auto" />
         </head>

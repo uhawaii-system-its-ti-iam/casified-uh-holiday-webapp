@@ -56,10 +56,10 @@
   .mantine-hidden-light {
     @mixin light {
       display: none;
-    } 
+    }
 
     @mixin dark {
-        display: block;
+      display: block;
     }
   }
 
@@ -68,4 +68,31 @@
       background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
     }
   }
+}
+
+.divider {
+  @apply w-full border-b border-off-white
+}
+
+.pagination-button-first {
+  @apply border-b ring-1 ring-light-dark-3-4 font-bold py-2 px-2 rounded-s-lg disabled:text-light-dark-3-4;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-button-middle {
+  @apply border-b ring-1 ring-light-dark-3-4 py-2 px-2 disabled:text-light-dark-3-4;
+}
+
+.pagination-button-last {
+  @apply border-b ring-1 ring-light-dark-3-4 font-bold py-2 px-2 rounded-e-lg disabled:text-light-dark-3-4;
+}
+
+.groupings-table {
+  @apply table-auto w-full
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
 }

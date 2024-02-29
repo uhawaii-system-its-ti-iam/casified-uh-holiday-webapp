@@ -10,5 +10,4 @@ describe('AboutPage', () => {
         expect(screen.getByRole('heading', { name: 'Frequently Asked Questions' })).toBeInTheDocument();
         expect(screen.getByTestId('faq-accordion')).toBeInTheDocument();
     });
-
 });
