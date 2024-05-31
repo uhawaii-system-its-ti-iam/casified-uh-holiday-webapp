@@ -54,6 +54,7 @@ api/*-overrides.properties
 api/output.txt
 api/src/main/resources/static/javascript/tsconfig.json
 api/*.iml
+
 api/.DS_Store
 
 # cypress

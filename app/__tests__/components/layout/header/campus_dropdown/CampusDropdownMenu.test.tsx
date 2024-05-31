@@ -1,42 +1,50 @@
-import { render, screen, /*fireEvent*/ } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import CampusDropdownMenu from '@/components/layout/header/campus_dropdown/CampusDropdownMenu';
+import userEvent from '@testing-library/user-event';
 
 describe('CampusDropdownMenu', () => {
-    it('renders the dropdown button with the menu closed by default', () => {
+
+    it('renders the dropdown button', () => {
         render(<CampusDropdownMenu />);
 
         const campusButton = screen.getByRole('button', { name: 'Campuses' });
         expect(campusButton).toBeInTheDocument();
+        const dropdownButton = screen.queryByRole('menuitem', {
+            name: 'Hilo'
+        });
+        expect(dropdownButton).not.toBeInTheDocument();
     });
 
-    /*it('toggles dropdown menu visibility on click', () => {
+    it('Toggles dropdown menu visibility on click', async () => {
         render(<CampusDropdownMenu />);
 
+        const user = userEvent.setup();
         const campusButton = screen.getByRole('button', { name: 'Campuses' });
+        let dropdownButton = screen.queryByRole('menuitem', {
+            name: 'Hilo'
+        });
+        expect(dropdownButton).not.toBeInTheDocument();
 
-        // Open dropdown menu
-        fireEvent.click(campusButton);
-        let uniLabel = screen.getByTestId('uniLabel');
-        expect(uniLabel).toBeInTheDocument();
+        await user.click(campusButton); // Open dropdown menu
 
-        // Close dropdown menu
-        fireEvent.click(campusButton);
-        uniLabel = screen.queryByTestId('uniLabel') as HTMLElement; // Use queryByTestId to check absence
-        expect(uniLabel).toBeNull();
+        dropdownButton = screen.queryByRole('menuitem', {
+            name: 'Hilo'
+        });
+        expect(dropdownButton).toBeInTheDocument();
     });
 
-    it('opens campus website in a new tab when clicked', () => {
+    it('opens campus website in a new tab when clicked', async () => {
         render(<CampusDropdownMenu />);
 
+        const user = userEvent.setup();
         const campusButton = screen.getByRole('button', { name: 'Campuses' });
+        
+        await user.click(campusButton); // Open dropdown menu
 
-        fireEvent.click(campusButton); // Open dropdown menu
+        const dropdownButton = screen.queryByRole('menuitem', {
+            name: 'Hilo'
+        });
 
-        const campusLinks = screen.getAllByRole('link', {
-            name: /Hilo|Manoa|West Oahu|Hawaii|Honolulu|Kapiolani|Kauai|Leeward|Maui|Windward/ 
-        });
-        campusLinks.forEach(link => {
-            expect(link).toHaveAttribute('target', '_blank');
-        });
-    });*/
+        expect(dropdownButton).toBeInTheDocument();
+    });
 });

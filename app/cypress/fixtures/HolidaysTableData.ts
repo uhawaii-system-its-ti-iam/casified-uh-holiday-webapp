@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-export const holidaysTableData = [
-=======
 const HolidaysTableData = [
->>>>>>> 008feac (Migrate to app router (#32))
     {
         "description": "Christmas",
         "types": [
@@ -6374,8 +6370,5 @@ const HolidaysTableData = [
         "observedDate": "2006-01-02"
     }
 ];
-<<<<<<< HEAD
-=======
 
 export default HolidaysTableData;
->>>>>>> 008feac (Migrate to app router (#32))

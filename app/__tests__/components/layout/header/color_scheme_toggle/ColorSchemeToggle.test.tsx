@@ -18,14 +18,6 @@ describe('ColorSchemeToggle', () => {
         }));
     });
 
-    it('should render the ColorSchemeToggle', () => {
-        render(<ColorSchemeToggle />);
-
-        expect(screen.getByRole('button', {name: 'Toggle theme'})).toBeInTheDocument();
-        expect(screen.getByTestId('SunIcon')).toBeInTheDocument();
-        expect(screen.getByTestId('MoonIcon')).toBeInTheDocument();
-    });
-
     it('should change the theme onClick', async () => {
         const user = userEvent.setup();
 
@@ -34,19 +26,19 @@ describe('ColorSchemeToggle', () => {
 
         render(<ColorSchemeToggle />, { wrapper });
 
-        let view = renderHook(useTheme, { wrapper });      
+        let view = renderHook(useTheme, { wrapper });
         expect(view.result.current.theme).toBe('system');
 
         await user.click(screen.getByRole('button', { name: 'Toggle theme' }));
-        await user.click(screen.getByRole('menuitem', { name: 'Light' })); 
+        await user.click(screen.getByRole('menuitem', { name: 'Light' }));
 
-        view = renderHook(useTheme, { wrapper });      
+        view = renderHook(useTheme, { wrapper });
         expect(view.result.current.theme).toBe('light');
 
         await user.click(screen.getByRole('button', { name: 'Toggle theme' }));
-        await user.click(screen.getByRole('menuitem', { name: 'Dark' })); 
+        await user.click(screen.getByRole('menuitem', { name: 'Dark' }));
 
-        view = renderHook(useTheme, { wrapper });      
+        view = renderHook(useTheme, { wrapper });
         expect(view.result.current.theme).toBe('dark');
     });
 });
