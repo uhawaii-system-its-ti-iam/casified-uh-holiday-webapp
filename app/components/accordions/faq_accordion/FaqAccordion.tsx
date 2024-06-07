@@ -29,7 +29,7 @@ const FaqAccordion = () => {
               Frequently Asked Questions
                 </h3>
                 <div className={"p-5"}/>
-                <h2 className="categoryText">General Questions</h2>
+                <h2 className="category-text">General Questions</h2>
                 <AccordionItem value="item-1">
                     <AccordionTrigger>
                 Who can answer some basic questions about the application?
@@ -39,7 +39,7 @@ const FaqAccordion = () => {
                     </AccordionContent>
                 </AccordionItem>
 
-                <h4 className="categoryText">Resources</h4>
+                <h4 className="category-text">Resources</h4>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Can I get the source code for this project?</AccordionTrigger>
                     <AccordionContent>
@@ -71,7 +71,7 @@ const FaqAccordion = () => {
                     </AccordionContent>
                 </AccordionItem>
 
-                <h3 className="categoryText">Technologies</h3>
+                <h3 className="category-text">Technologies</h3>
                 <AccordionItem value="item-6">
                     <AccordionTrigger>What did you use to create the site?</AccordionTrigger>
                     <AccordionContent>

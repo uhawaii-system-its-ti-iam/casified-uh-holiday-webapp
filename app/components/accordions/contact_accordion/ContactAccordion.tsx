@@ -14,7 +14,7 @@ const ContactAccordion = () => {
     return (
         <Accordion type="single" collapsible className="w-full p-24">
             <div className="px-48">
-                <h3 className="pageTitle">
+                <h3 className="page-title">
               Contact Us
                 </h3>
                 <div className={"p-5"}/>

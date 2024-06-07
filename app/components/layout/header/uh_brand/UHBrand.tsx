@@ -13,7 +13,7 @@ function Logo() {
                 height={50}
                 alt="logo"
                 role="img"/>
-            <Label className={"uhBrand"}>
+            <Label className={"uh-brand"}>
               UH Holidays
             </Label>
         </Link>
