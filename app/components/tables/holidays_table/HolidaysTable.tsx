@@ -4,8 +4,6 @@ import {
     Table,
     TableBody,
     TableCaption,
-    /*    TableCell,
-    TableFooter,*/
     TableHead,
     TableHeader,
     TableRow,
@@ -70,7 +68,7 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
                 <Filter filtering={filtering} setFiltering={setFiltering} />
             </div>
             <Table>
-                <TableCaption>The list of holidays observed by the University of Hawai'i</TableCaption>
+                <TableCaption>The list of holidays observed by the University of Hawai&apos;i</TableCaption>
                 <TableHeader>
                     {tableInstance.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
