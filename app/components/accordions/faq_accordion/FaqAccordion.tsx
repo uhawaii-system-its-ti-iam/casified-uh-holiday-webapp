@@ -38,7 +38,7 @@ const FaqAccordion = () => {
                 Send an email to <a href={`mailto:${email}`}>ITS Web Developers.</a>
                     </AccordionContent>
                 </AccordionItem>
-
+                <div className={"p-5"}/>
                 <h4 className="categoryText">Resources</h4>
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Can I get the source code for this project?</AccordionTrigger>
@@ -70,7 +70,7 @@ const FaqAccordion = () => {
                         <a href={stateObservedHolidays} target="_state_observed_holidays"> State Observed Holidays</a>.
                     </AccordionContent>
                 </AccordionItem>
-
+                <div className={"p-5"}/>
                 <h3 className="categoryText">Technologies</h3>
                 <AccordionItem value="item-6">
                     <AccordionTrigger>What did you use to create the site?</AccordionTrigger>
