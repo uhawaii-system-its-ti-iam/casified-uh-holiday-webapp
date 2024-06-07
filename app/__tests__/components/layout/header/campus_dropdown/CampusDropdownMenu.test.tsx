@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import CampusDropdownMenu from '@/components/layout/header/campus_dropdown/CampusDropdownMenu';
 import userEvent from '@testing-library/user-event';
 
@@ -25,7 +25,9 @@ describe('CampusDropdownMenu', () => {
         });
         expect(dropdownButton).not.toBeInTheDocument();
 
-        await user.click(campusButton); // Open dropdown menu
+        await act(async () => {
+            await user.click(campusButton); // Open dropdown menu
+        });
 
         dropdownButton = screen.queryByRole('menuitem', {
             name: 'Hilo'
@@ -38,8 +40,10 @@ describe('CampusDropdownMenu', () => {
 
         const user = userEvent.setup();
         const campusButton = screen.getByRole('button', { name: 'Campuses' });
-        
-        await user.click(campusButton); // Open dropdown menu
+
+        await act(async () => {
+            await user.click(campusButton); // Open dropdown menu
+        });
 
         const dropdownButton = screen.queryByRole('menuitem', {
             name: 'Hilo'
