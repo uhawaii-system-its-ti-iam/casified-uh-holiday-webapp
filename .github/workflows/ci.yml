@@ -45,15 +45,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd app
+          cd ui
           npm install
 
       - name: Run ESLint
         run: |
-          cd app
+          cd ui
           npm run lint
 
       - name: Run Jest Tests
         run: |
-          cd app
+          cd ui
           npm run test
