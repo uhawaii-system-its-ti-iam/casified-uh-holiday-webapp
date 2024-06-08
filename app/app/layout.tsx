@@ -1,34 +1,42 @@
-import './global.css';
-
+import './globals.css';
 import Header from '@/components/layout/header/Header';
 import Footer from '@/components/layout/footer/Footer';
-import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
-import { ModalsProvider } from '@mantine/modals';
-import HolidayModal from '@/components/modals/holiday_modal/HolidayModal';
+import { ThemeProvider } from '@/components/theme-provider';
 
-const theme = createTheme({
-    primaryColor: 'blue'
-});
-  
-const RootLayout = ({ 
+const isTestEnvironment = process.env.NODE_ENV === 'test';
+
+const RootLayout = ({
     children
 }: {
-    children?: React.ReactNode
-}) => (
-    <html lang="en">  
-        <head>
-            <ColorSchemeScript defaultColorScheme="auto" />
-        </head>
-        <body>
-            <MantineProvider theme={theme} defaultColorScheme="auto">    
-                <ModalsProvider modals={{holiday: HolidayModal}}>        
-                    <Header />
-                    {children}
-                    <Footer />
-                </ModalsProvider>
-            </MantineProvider>
-        </body>
-    </html>
-);
+  children?: React.ReactNode
+}) => {
+    const content = (
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <Header />
+            <main>
+                {children}
+            </main>
+            <Footer />
+        </ThemeProvider>
+    );
+
+    if (isTestEnvironment) {
+        return content;
+    }
+
+    return (
+        <html lang="en">
+            <head />
+            <body>
+                {content}
+            </body>
+        </html>
+    );
+};
 
 export default RootLayout;

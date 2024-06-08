@@ -1,4 +1,4 @@
-export const holidaysTableData = [
+const HolidaysTableData = [
     {
         "description": "Christmas",
         "types": [
@@ -6370,3 +6370,5 @@ export const holidaysTableData = [
         "observedDate": "2006-01-02"
     }
 ];
+
+export default HolidaysTableData;

@@ -1,9 +1,8 @@
-import { screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Login from '@/components/layout/header/login_button/LoginButton';
 import { redirect } from 'next/navigation';
 import User, { anonymousUser } from '@/access/User';
 import Role from '@/access/Role';
-import { renderWithProviders } from 'jest.setup';
 
 const casUrl = process.env.NEXT_PUBLIC_CAS_URL as string;
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
@@ -14,13 +13,13 @@ describe('Login', () => {
     describe('User is not logged in', () => {
 
         it('should render a Login button', () => {
-            renderWithProviders(<Login currentUser={anonymousUser} />);
+            render(<Login currentUser={anonymousUser} />);
 
             expect(screen.getByRole('button', { name: 'Login' })).toBeInTheDocument;
         });
 
         it('should visit the CAS login url on click', () => {
-            renderWithProviders(<Login currentUser={anonymousUser} />);
+            render(<Login currentUser={anonymousUser} />);
 
             const casLoginUrl = `${casUrl}/login?service=${encodeURIComponent(`${baseUrl}/api/cas/login`)}`;
             fireEvent.click(screen.getByRole('button', { name: 'Login' }));
@@ -36,13 +35,13 @@ describe('Login', () => {
         });
 
         it('should render a Logout button', () => {
-            renderWithProviders(<Login currentUser={testUser} />);
+            render(<Login currentUser={testUser} />);
 
             expect(screen.getByRole('button', { name: `Logout (${testUser.uid})` })).toBeInTheDocument;
         });
 
         it('should visit the CAS logout url on click', () => {
-            renderWithProviders(<Login currentUser={testUser} />);
+            render(<Login currentUser={testUser} />);
             
             const casLogoutUrl = `${casUrl}/logout?service=${encodeURIComponent(`${baseUrl}/api/cas/logout`)}`;
             fireEvent.click(screen.getByRole('button', { name: `Logout (${testUser.uid})` }));

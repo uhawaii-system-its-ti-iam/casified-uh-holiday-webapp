@@ -1,31 +1,45 @@
-import { Accordion, AccordionControl, AccordionItem, AccordionPanel } from '@mantine/core';
+'use client';
+
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const ContactAccordion = () => {
     const email = 'duckart@hawaii.edu';
     const itsOffice = 'www.hawaii.edu/its';
 
     return (
-        <Accordion data-testid="contact-accordion">
-            <AccordionItem value="For General Help/How-To Questions">
-                <AccordionControl>For General Help/How-To Questions</AccordionControl>
-                <AccordionPanel>
-                    Send email: <a href={`mailto:${email}`}>{email}</a>
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem value="Reporting Technical Issues/Problems">
-                <AccordionControl>Reporting Technical Issues/Problems</AccordionControl>
-                <AccordionPanel>
-                    Send email: <a href={`mailto:${email}`}>{email}</a>
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem value="Information Technology Services">
-                <AccordionControl>Information Technology Services</AccordionControl>
-                <AccordionPanel>
-                    See: <a href={`http://${itsOffice}`} target="_its_office">{itsOffice}</a>
-                </AccordionPanel>
-            </AccordionItem>
+        <Accordion type="single" collapsible className="w-full p-24">
+            <div className="px-48">
+                <h3 className="page-title">
+              Contact Us
+                </h3>
+                <div className={"p-5"}/>
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>For General Help/How-To Questions</AccordionTrigger>
+                    <AccordionContent>
+                Send email: <a href={`mailto:${email}`}>{email}</a>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                    <AccordionTrigger>Reporting Technical Issues/Problems</AccordionTrigger>
+                    <AccordionContent>
+                Send email: <a href={`mailto:${email}`}>{email}</a>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                    <AccordionTrigger>Information Technology Services</AccordionTrigger>
+                    <AccordionContent>
+                See: <a href={`http://${itsOffice}`} target="_its_office">{itsOffice}</a>
+                    </AccordionContent>
+                </AccordionItem>
+            </div>
+
         </Accordion>
     );
 }
- 
+
 export default ContactAccordion;
