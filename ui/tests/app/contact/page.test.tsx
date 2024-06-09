@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import ContactPage from 'app/contact/page';
+import ContactPage from '@/src/app/contact/page';
 
 describe ('ContactPage', () => {
 

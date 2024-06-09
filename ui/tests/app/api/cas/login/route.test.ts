@@ -1,4 +1,4 @@
-import { GET } from 'app/api/cas/login/route';
+import { GET } from '@/src/app/api/cas/login/route';
 import { redirect } from 'next/navigation';
 import { handleLogin } from '@/access/authentication-service';
 import { NextRequest } from 'next/server';

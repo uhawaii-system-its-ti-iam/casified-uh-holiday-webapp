@@ -1,5 +1,5 @@
 import HolidaysTable from '@/src/app/(index)/components_/holidays_table/holidays-table';
-import holidaysData from '../../../../../public/data/holidaysData.json';
+import holidaysData from '../../../../public/data/holidaysData.json';
 import { render, screen, fireEvent } from '@testing-library/react';
 describe('Filter', () => {
 
