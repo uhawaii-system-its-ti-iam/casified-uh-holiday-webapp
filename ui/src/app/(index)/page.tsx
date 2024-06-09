@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Container, Col, Row} from 'react-bootstrap';
-import HolidaysTable from "../../components/tables/holidays_table/holidays-table";
+import HolidaysTable from "./components_/holidays_table/holidays-table";
 import axios from '@/src/hooks/axios-config';
 const Home: NextPage = async () => {
     const { data } = await axios.get(process.env.NEXT_PUBLIC_BASE_URL + 'holidays');

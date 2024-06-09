@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Layout from 'app/layout';
 
 // Mock Header workaround because React Testing Library does not support rendering server components.
-jest.mock('@/components/layout/header/header');
+jest.mock('@/src/components_/layout/header/header');
 
 window.matchMedia = window.matchMedia || function() {
     return {

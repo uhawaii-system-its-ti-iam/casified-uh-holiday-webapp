@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import FaqAccordion from '@/components/accordions/faq_accordion/faq-accordion';
+import FaqAccordion from '@/src/app/about/components_/faq-accordion';
 
 describe('FaqAccordion', () => {
 

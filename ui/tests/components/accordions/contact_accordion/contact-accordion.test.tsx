@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import ContactAccordion from '@/components/accordions/contact_accordion/contact-accordion';
+import ContactAccordion from '@/src/app/contact/components_/contact-accordion';
 
 describe('ContactAccordion', () => {
 

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Login from '@/components/layout/header/login_button/login-button';
+import Login from '@/src/components_/layout/header/login_button/login-button';
 import { redirect } from 'next/navigation';
 import User, { anonymousUser } from '@/access/user';
 import Role from '@/access/role';

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import HolidaysTable from '@/components/tables/holidays_table/holidays-table';
+import HolidaysTable from '@/src/app/(index)/components_/holidays_table/holidays-table';
 //import { Holiday } from '@/components/tables/holidays_table/Holiday';
 import holidaysData from '../../../../public/data/holidaysData.json';
 

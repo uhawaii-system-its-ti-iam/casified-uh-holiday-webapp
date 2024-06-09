@@ -1,4 +1,4 @@
-import ContactAccordion from '@/components/accordions/contact_accordion/contact-accordion';
+import ContactAccordion from './components_/contact-accordion';
 import { Container, Col, Row } from 'react-bootstrap';
 
 const ContactPage = () => {

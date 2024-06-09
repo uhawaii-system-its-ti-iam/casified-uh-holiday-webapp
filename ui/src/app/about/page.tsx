@@ -1,4 +1,4 @@
-import FaqAccordion from "@/components/accordions/faq_accordion/faq-accordion";
+import FaqAccordion from "./components_/faq-accordion";
 import { Container, Col, Row } from 'react-bootstrap';
 
 const AboutPage = () => {

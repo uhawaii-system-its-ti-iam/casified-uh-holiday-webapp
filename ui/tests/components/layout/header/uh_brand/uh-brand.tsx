@@ -1,4 +1,4 @@
-import UHBrand from '@/components/layout/header/uh_brand/uh-brand';
+import UHBrand from '../../../../../src/components_/layout/header/uh_brand/uh-brand';
 import { render, screen } from '@testing-library/react';
 
 describe('UHBrand', () => {

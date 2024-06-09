@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from '@/components/layout/header/header';
+import Header from '@/src/components_/layout/header/header';
 import User, { anonymousUser } from '@/access/user';
 import * as AuthenticationService from '@/access/authentication-service';
 import Role from '@/access/role';

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Menubar from '@/components/layout/menubar/menubar';
+import Menubar from '@/src/components_/layout/menubar/menubar';
 import User, { anonymousUser } from '@/access/user';
 import * as AuthenticationService from '@/access/authentication-service';
 import Role from '@/access/role';

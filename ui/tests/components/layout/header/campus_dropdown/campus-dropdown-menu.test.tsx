@@ -1,5 +1,5 @@
 import { render, screen, act } from '@testing-library/react';
-import CampusDropdownMenu from '@/components/layout/header/campus_dropdown/campus-dropdown-menu';
+import CampusDropdownMenu from '@/src/components_/layout/header/campus_dropdown/campus-dropdown-menu';
 import userEvent from '@testing-library/user-event';
 
 describe('CampusDropdownMenu', () => {

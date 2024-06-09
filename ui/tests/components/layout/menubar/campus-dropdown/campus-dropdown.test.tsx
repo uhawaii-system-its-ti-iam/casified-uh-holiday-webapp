@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import CampusDropdown from '@/components/layout/menubar/campus_dropdown/campus-dropdown';
+import CampusDropdown from '@/src/components_/layout/menubar/campus_dropdown/campus-dropdown';
 
 describe('CampusDropdown', () => {
     const campuses = {

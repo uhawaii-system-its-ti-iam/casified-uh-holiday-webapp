@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
-import ColorSchemeToggle from '@/components/layout/header/color_scheme_toggle/color-scheme-toggle';
+import ColorSchemeToggle from '@/src/components_/layout/header/color_scheme_toggle/color-scheme-toggle';
 import { render, renderHook, screen, act } from '@testing-library/react';
 
 describe('ColorSchemeToggle', () => {

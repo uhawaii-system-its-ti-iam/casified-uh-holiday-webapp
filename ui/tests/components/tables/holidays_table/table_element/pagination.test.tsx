@@ -1,4 +1,4 @@
-import HolidaysTable from '@/components/tables/holidays_table/holidays-table';
+import HolidaysTable from '@/src/app/(index)/components_/holidays_table/holidays-table';
 import holidaysData from '../../../../../public/data/holidaysData.json';
 import { render, screen, fireEvent } from '@testing-library/react';
 
