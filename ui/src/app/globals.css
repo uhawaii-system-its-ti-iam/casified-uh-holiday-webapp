@@ -8,17 +8,17 @@
 
 @font-face {
   font-family: cinzel-regular;
-  src: url('../public/fonts/Cinzel-Regular.ttf');
+  src: url('../../public/fonts/Cinzel-Regular.ttf');
 }
 
 @font-face {
   font-family: cinzel-decorative-bold;
-  src: url('../public/fonts/CinzelDecorative-Bold.ttf');
+  src: url('../../public/fonts/CinzelDecorative-Bold.ttf');
 }
 
 @font-face {
   font-family: cormorant-upright-regular;
-  src: url('../public/fonts/CormorantUpright-Regular.ttf');
+  src: url('../../public/fonts/CormorantUpright-Regular.ttf');
 }
 
 @layer base {

@@ -3,13 +3,16 @@
     "baseUrl": "./",
     "paths": {
       "@/access/*": [
-        "access/*"
+        "src/access/*"
       ],
       "@/components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@/hooks/*": [
-        "hooks/*"
+        "src/hooks/*"
+      ],
+      "@/src/*": [
+        "src/*"
       ]
     },
     "target": "es5",
