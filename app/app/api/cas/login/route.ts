@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import type { NextRequest } from 'next/server';
-import { handleLogin } from '@/access/AuthenticationService';
+import { handleLogin } from '@/access/authentication-service';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 

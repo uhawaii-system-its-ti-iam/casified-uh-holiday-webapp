@@ -1,48 +1,48 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-ui/node_modules
-ui/.pnp
-ui/pnp.js
+app/node_modules
+app/.pnp
+app/pnp.js
 
 # testing
-ui/coverage
+app/coverage
 
 # next.js
-ui/.next/
-ui/out/
+app/.next/
+app/out/
 
 # production
-ui/build
+app/bappld
 
 # misc
 **/.DS_Store
-ui/*.pem
+app/*.pem
 
 # debug
-ui/npm-debug.log*
-ui/yarn-debug.log*
-ui/yarn-error.log*
-ui/.pnpm-debug.log*
+app/npm-debug.log*
+app/yarn-debug.log*
+app/yarn-error.log*
+app/.pnpm-debug.log*
 
 # local env files
-ui/.env*.local
+app/.env*.local
 
 # vercel
-ui/.vercel
+app/.vercel
 
 # typescript
-ui/*.tsbuildinfo
-ui/next-env.d.ts
+app/*.tsbappldinfo
+app/next-env.d.ts
 
 # IDEs
 .idea
 .vscode
-ui/.idea
-ui/.vscode
+app/.idea
+app/.vscode
 
 # package-lock
-ui/package-lock.json
+app/package-lock.json
 
 # api
 api/.classpath
@@ -58,5 +58,5 @@ api/*.iml
 api/.DS_Store
 
 # cypress
-ui/cypress/screenshots/*
-ui/cypress/downloads/*
+app/cypress/screenshots/*
+app/cypress/downloads/*

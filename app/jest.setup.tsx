@@ -1,7 +1,7 @@
 import { loadEnvConfig } from '@next/env';
 import { enableFetchMocks } from 'jest-fetch-mock';
 import {ThemeProvider} from "@/components/theme-provider";
-import User from '@/access/User';
+import User from './access/user';
 import { RenderOptions, render } from '@testing-library/react';
 
 enableFetchMocks();

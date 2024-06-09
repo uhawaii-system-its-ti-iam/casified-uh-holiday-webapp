@@ -1,6 +1,6 @@
 import './globals.css';
-import Header from '@/components/layout/header/Header';
-import Footer from '@/components/layout/footer/Footer';
+import Header from '@/components/layout/header/header';
+import Footer from '@/components/layout/footer/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 
 const isTestEnvironment = process.env.NODE_ENV === 'test';

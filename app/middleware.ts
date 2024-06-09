@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 import { NextResponse, NextRequest } from 'next/server';
 import { getIronSession } from 'iron-session';
-import { SessionData, sessionOptions } from './access/Session';
+import { SessionData, sessionOptions } from '@/access/session';
 
 export const middleware = async (req: NextRequest) => {
     const session = await getIronSession<SessionData>(cookies(), sessionOptions);

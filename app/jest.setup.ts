@@ -1,6 +1,6 @@
 import { loadEnvConfig } from '@next/env';
 import { enableFetchMocks } from 'jest-fetch-mock';
-import User from '@/access/User';
+import User from '@/access/user';
 
 enableFetchMocks();
 loadEnvConfig(process.cwd());
