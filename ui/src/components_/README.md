@@ -6,11 +6,11 @@ to the pages, where they are stitched together. This saves us both development t
 used components are the 'navbar' and the 'footer.'
 The single-use components are stored with their respective pages, and components with various usages, are kept in this folder.
 
-### Atomic Components
+## Atomic Components
 
 Atomic components do not contain any subcomponents.
 Many of the components we will use will consist of atomic components that are both imported and written by us.
 
-### Additional Resources
+## Additional Resources
 
 Codevolution has a wonderful video with specifics on how components work in web applications: https://www.youtube.com/watch?v=Y2hgEGPzTZY

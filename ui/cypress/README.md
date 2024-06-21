@@ -3,7 +3,7 @@
 In the 'cypress' folder, we keep tests that use Cypress, an open-source end-to-end testing framework for web applications.
 Cypress is designed to be developer-friendly, providing a robust and easy-to-use tool for writing, running, and debugging tests for modern web applications. 
 
-### Cypress Features
+## Cypress Features
 
 - End-to-End Testing: Cypress allows you to test the entire application workflow from start to finish. 
 This includes interacting with the user interface, making network requests, and verifying the final state of the application.
@@ -29,6 +29,6 @@ It does not require additional setup for the test environment, making it accessi
 
 - Rich Ecosystem: Cypress has a rich ecosystem of plugins and extensions, allowing you to extend its functionality to suit your testing needs.
 
-### Additional Resources
+## Additional Resources
 
 You can find more information on the official Cypress documentation here: https://docs.cypress.io/guides/overview/why-cypress
