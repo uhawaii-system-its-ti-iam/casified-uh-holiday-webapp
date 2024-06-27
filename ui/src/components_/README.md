@@ -1,4 +1,6 @@
-# What's in here?
+# Components
+
+## What's in here?
 
 The 'components_' folder contains
 the building blocks of our pages.

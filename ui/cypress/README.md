@@ -1,5 +1,6 @@
-# What's in here?
+# Cypress
 
+## What's in here?
 In the 'cypress' folder, we keep
 tests that use Cypress, an open-source
 end-to-end testing framework for web applications.

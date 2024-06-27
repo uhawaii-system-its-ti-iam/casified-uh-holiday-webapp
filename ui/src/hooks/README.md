@@ -1,4 +1,6 @@
-# What's in here?
+# Hooks
+
+## What's in here?
 
 In the 'hooks' folder, we store
 custom React hooks, which are

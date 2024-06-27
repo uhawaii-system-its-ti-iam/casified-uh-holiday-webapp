@@ -1,5 +1,6 @@
-# What's in here?
+# Public
 
+## What's in here?
 In the 'public' folder, we store items
 that we use commonly for easy access.
 In the data sub-folder, we have data

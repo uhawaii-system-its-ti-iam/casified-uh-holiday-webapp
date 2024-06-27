@@ -1,4 +1,6 @@
-# What's in here?
+# App
+
+## What's in here?
 
 The 'app' directory houses the application's
 pages and their corresponding components.

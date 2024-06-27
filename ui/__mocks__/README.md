@@ -1,4 +1,6 @@
-# What's in here?
+# Mocks
+
+## What's in here?
 
 In the mocks folder, we store mocks,
 which are simulated objects or functions

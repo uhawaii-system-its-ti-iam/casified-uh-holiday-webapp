@@ -1,4 +1,6 @@
-# What's in here?
+# Tests
+
+## What's in here?
 
 In the 'tests' folder, we store
 test classes for our app's various
@@ -19,5 +21,5 @@ which you can learn more about
 here: <https://jestjs.io/docs/getting-started>
 
 You can also read about
-the React testing library here: 
+the React testing library here:
 <https://testing-library.com/docs/react-testing-library/intro/>
