@@ -1,7 +1,8 @@
 # What's in here?
+
 In the mocks folder, we store mocks,
 which are simulated objects or functions
-used in place of real dependencies during testing. 
+used in place of real dependencies during testing.
 They allow you to isolate and test individual
 components or modules without relying
 on external systems or complex dependencies.
@@ -12,7 +13,7 @@ identify and fix issues.
 
 ## Purpose of Mocks
 
-- Isolation: Mocks isolate the unit 
+- Isolation: Mocks isolate the unit
 of code being tested from its dependencies,
 ensuring that tests focus only on the component or function under test.
 - Predictability: By mocking dependencies,
@@ -27,6 +28,7 @@ the setup and teardown of complex
 systems, making tests easier to write and maintain.
 
 ## Additional Resources
+
 You can find more information
-about Jest manual mocks here: 
+about Jest manual mocks here:
 <https://jestjs.io/docs/manual-mocks>

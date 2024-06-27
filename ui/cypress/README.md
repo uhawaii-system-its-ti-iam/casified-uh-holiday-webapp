@@ -1,4 +1,5 @@
 # What's in here?
+
 In the 'cypress' folder, we keep
 tests that use Cypress, an open-source
 end-to-end testing framework for web applications.
@@ -32,18 +33,21 @@ debugging tools.
 You can use the built-in
 developer tools to inspect
 your application at any point in the test.
-- Automatic Waiting: Cypress 
+- Automatic Waiting: Cypress
 automatically waits for commands
-and assertions before moving on, ensuring that tests are not flaky due to timing issues.
+and assertions before moving on,
+ensuring that tests are
+not flaky due to timing issues.
 - Network Traffic Control: You can
 stub and mock network requests and
-responses, allowing you to test edge 
-cases and error handling without 
+responses, allowing you to test edge
+cases and error handling without
 relying on external services.
 - Cross-Browser Testing: Cypress
 supports running tests across
 multiple browsers, including Chrome, Firefox, and Edge.
-- Easy Setup and Configuration: Cypress is easy to install and configure. 
+- Easy Setup and Configuration:
+Cypress is easy to install and configure.
 It does not require additional
 setup for the test environment,
 making it accessible for developers.
@@ -59,6 +63,7 @@ extensions, allowing you to extend
 its functionality to suit your testing needs.
 
 ## Additional Resources
+
 You can find more information
 on the official Cypress documentation here:
 <https://docs.cypress.io/guides/overview/why-cypress>

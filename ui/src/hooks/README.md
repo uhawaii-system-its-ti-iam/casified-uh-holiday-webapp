@@ -1,4 +1,5 @@
 # What's in here?
+
 In the 'hooks' folder, we store
 custom React hooks, which are
 functions that enable functional
@@ -9,8 +10,9 @@ components, making it easier to
 manage and reuse component logic.
 
 ## Additional Resources
-React Docs on hooks: 
+
+React Docs on hooks:
 <https://legacy.reactjs.org/docs/hooks-intro.html>
 
-List of commonly used hooks: 
+List of commonly used hooks:
 <https://legacy.reactjs.org/docs/hooks-reference.html>
