@@ -8,7 +8,7 @@ providing a robust and easy-to-use
 tool for writing, running, and debugging
 tests for modern web applications.
 
-# Cypress Features
+## Cypress Features
 
 - End-to-End Testing: Cypress allows
 you to test the entire application
@@ -62,7 +62,7 @@ a rich ecosystem of plugins and
 extensions, allowing you to extend
 its functionality to suit your testing needs.
 
-# Additional Resources
+## Additional Resources
 
 You can find more information
 on the official Cypress documentation here:

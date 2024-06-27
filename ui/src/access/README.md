@@ -1,6 +1,6 @@
 # Access
 
-# What's in here?
+## What's in here?
 
 The access folder typically contains
 modules related to managing and controlling
@@ -9,7 +9,7 @@ This folder often includes files for handling
 authorization, roles, sessions, and other
 security-related concerns.
 
-# Purpose of the Access folder
+## Purpose of the Access folder
 
 The purpose of the access folder is to
 centralize and organize all logic related

@@ -9,7 +9,7 @@ to use these features in functional
 components, making it easier to
 manage and reuse component logic.
 
-# Additional Resources
+## Additional Resources
 
 React Docs on hooks:
 <https://legacy.reactjs.org/docs/hooks-intro.html>

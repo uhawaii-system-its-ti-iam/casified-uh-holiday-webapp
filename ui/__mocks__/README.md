@@ -11,7 +11,7 @@ and predictable environments
 for testing, making it easier to
 identify and fix issues.
 
-# Purpose of Mocks
+## Purpose of Mocks
 
 - Isolation: Mocks isolate the unit
 of code being tested from its dependencies,
@@ -27,7 +27,7 @@ network requests or database queries.
 the setup and teardown of complex
 systems, making tests easier to write and maintain.
 
-# Additional Resources
+## Additional Resources
 
 You can find more information
 about Jest manual mocks here:

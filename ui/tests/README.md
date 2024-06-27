@@ -1,5 +1,3 @@
-# Tests
-
 # What's in here?
 
 In the 'tests' folder, we store
@@ -13,7 +11,7 @@ They help ensure that changes
 to the codebase do not introduce
 new bugs or issues.
 
-# Additional Resources
+## Additional Resources
 
 We primarily use JEST, a
 Javascript testing framework,
