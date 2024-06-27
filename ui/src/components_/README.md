@@ -1,6 +1,6 @@
 # Components
 
-## What's in here?
+# What's in here?
 
 The 'components_' folder contains
 the building blocks of our pages.
@@ -20,7 +20,7 @@ stored with their respective pages,
 and components with various
 usages, are kept in this folder.
 
-## Atomic Components
+# Atomic Components
 
 Atomic components do not
 contain any subcomponents.
@@ -29,7 +29,7 @@ use will consist of atomic
 components that are both
 imported and written by us.
 
-## Additional Resources
+# Additional Resources
 
 Codevolution has a wonderful
 video with specifics on how
