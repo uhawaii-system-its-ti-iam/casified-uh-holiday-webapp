@@ -610,10 +610,10 @@ public class HolidayServiceTest {
 
                 // String dateStr = Dates.formatDate(h2.getObservedDate().plusDays(-1), "yyyy-MM-dd");
                 // String dateExpectedStr = h1.getObservedDateStr();
-
                 // Holiday holiday = holidayService.findClosestHolidayByDate(dateStr, false, "state");
                 // assertThat(holiday.getObservedDateStr(), equalTo(dateExpectedStr));
             }
+
 
             // String dateStr = "3000-01-01";
             // String dateExpectedStr = holidays.get(holidays.size() - 1).getObservedDateStr();
