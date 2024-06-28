@@ -25,8 +25,8 @@ const FaqAccordion = () => {
     return (
         <Accordion type="single" collapsible className="w-full p-24">
             <div className="px-48">
-                <h3 className="pageTitle">
-              Frequently Asked Questions
+                <h3 className="page-title">
+                  Frequently Asked Questions
                 </h3>
                 <div className={"p-5"}/>
                 <h2 className="category-text">General Questions</h2>
