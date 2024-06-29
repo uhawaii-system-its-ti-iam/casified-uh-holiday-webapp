@@ -7,9 +7,9 @@ describe ('Footer', () => {
         render(<Footer />);
 
         expect(screen.getByRole('contentinfo')).toBeInTheDocument;
-        expect(screen.getByText('University')).toBeInTheDocument;
+        expect(screen.getByText('UNIVERSITY')).toBeInTheDocument;
         expect(screen.getByText('of')).toBeInTheDocument;
-        expect(screen.getByText('Hawai‘i')).toBeInTheDocument;
+        expect(screen.getByText('HAWAI‘I')).toBeInTheDocument;
     });
     
 });
