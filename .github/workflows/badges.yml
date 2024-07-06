@@ -45,12 +45,12 @@ jobs:
 
       - name: Installing dependencies
         run: |
-          cd app
+          cd ui
           npm install
 
       - name: Tests
         run: |
-          cd app
+          cd ui
           npm run test:coverage
 
       - name: Switch to badges branch
