@@ -19,25 +19,18 @@ const Menu = () => {
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          Home
+                            Home
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/about" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          About
+                            About
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <CampusDropdown/>
-                <NavigationMenuItem>
-                    <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
     );
