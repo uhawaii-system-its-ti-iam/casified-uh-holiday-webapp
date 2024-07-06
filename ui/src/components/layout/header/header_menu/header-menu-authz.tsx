@@ -17,7 +17,7 @@ const AuthMenuZ = () => {
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
+                            Contact
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

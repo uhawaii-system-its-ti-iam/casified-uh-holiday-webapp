@@ -17,13 +17,11 @@ const Header = async () => {
 
                     <div className="hidden sm:flex space-x-1" data-testid="header-links">
                         <Menu/>
-                        {currentUser && currentUser.roles.includes(Role.UH) && (
+                        {currentUser.roles.includes(Role.UH) && (
                             <AuthMenuZ/>
                         )}
                         <LoginButton currentUser={currentUser}/>
-                        <div className="px-4">
-                            <ColorSchemeToggle/>
-                        </div>
+                        <ColorSchemeToggle />
                     </div>
                 </div>
             </div>

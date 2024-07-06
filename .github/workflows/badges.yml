@@ -62,7 +62,7 @@ jobs:
         uses: jpb06/jest-badges-action@latest
         with:
           branches: '*'
-          coverage-summary-path: app/coverage/coverage-summary.json
+          coverage-summary-path: ui/coverage/coverage-summary.json
           no-commit: true
           target-branch: badges
 
