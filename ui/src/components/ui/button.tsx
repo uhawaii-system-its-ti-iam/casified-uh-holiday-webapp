@@ -21,6 +21,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
                 link: "text-primary underline-offset-4 hover:underline",
+                golden: "border border-input bg-golden shadow-sm hover:bg-golden-foreground hover:text-accent-foreground",
             },
             size: {
                 default: "h-9 px-4 py-2",
@@ -33,7 +34,7 @@ const buttonVariants = cva(
             variant: "default",
             size: "default",
         },
-    }
+    } as const
 )
 
 export interface ButtonProps

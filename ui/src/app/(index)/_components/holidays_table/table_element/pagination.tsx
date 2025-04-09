@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useReactTable } from '@tanstack/react-table';
 import { Holiday } from '../holiday';
-//import {IconChevronLeftPipe, IconChevronRightPipe, IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 
 interface PaginationProps {
   tableInstance: ReturnType<typeof useReactTable<Holiday>>;

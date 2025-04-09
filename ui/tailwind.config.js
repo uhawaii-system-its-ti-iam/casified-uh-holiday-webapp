@@ -13,9 +13,20 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: "2rem",
+            padding: {
+                DEFAULT: '0.75rem',
+                sm: '1rem',
+                md: '1.25rem',
+                lg: '2rem',
+                xl: '3rem',
+                '2xl': '9rem'
+            },
             screens: {
-                "2xl": "1400px",
+                sm: '576px',
+                md: '768px',
+                lg: '992px',
+                xl: '1200px',
+                '2xl': '1400px'
             },
         },
         extend: {
@@ -53,6 +64,10 @@ module.exports = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
+                golden: {
+                    DEFAULT: "hsl(var(--golden))",
+                    foreground: "hsl(var(--golden-foreground))"
+                }
             },
             borderRadius: {
                 lg: "var(--radius)",
@@ -82,41 +97,3 @@ module.exports = {
     },
     plugins: [require("tailwindcss-animate")],
 }
-/*
-
-/!** @type {import('tailwindcss').Config} *!/
-module.exports = {
-  content: [
-    './app/!**!/!*.{js,ts,jsx,tsx,mdx}',
-    './components/!**!/!*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    screens: {
-      "xs": "36em",
-      "sm": "48em",
-      "md": "62em",
-      "lg": "75em",
-      "xl": "88em"
-    },
-    fontFamily: {
-      'cinzel-regular': ['cinzel-regular', 'serif'],
-      'cinzel-decorative-bold': ['cinzel-decorative-bold', 'sans-serif'],
-      'cormorant-upright-regular': ['cormorant-upright-regular', 'cursive']
-    },
-    extend: {
-      colors: {
-        "link-blue": "#0275d8",
-        "gold": "#bd9319",
-        "gray": "#777",
-        "ash": "#e7e7e7",
-        "off-white": "#e9ecef",
-        "light-dark": {
-          "3-4": "light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))",
-          "7-0": "light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))"
-        }
-      }
-    },
-  },
-  plugins: [],
-}
-*/
