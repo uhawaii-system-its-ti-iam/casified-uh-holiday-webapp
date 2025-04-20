@@ -26,13 +26,13 @@ describe('Pagination', () => {
 
         fireEvent.click(last);
         let firstPage = screen.queryAllByRole('button', { name: '1' });
-        let lastPage = screen.queryAllByRole('button', { name: '25' });
+        let lastPage = screen.queryAllByRole('button', { name: '18' });
         expect(firstPage.length).toBe(0);
         expect(lastPage.length).toBe(1);
 
         fireEvent.click(first);
         firstPage = screen.queryAllByRole('button', { name: '1' });
-        lastPage = screen.queryAllByRole('button', { name: '25' });
+        lastPage = screen.queryAllByRole('button', { name: '18' });
         expect(lastPage.length).toBe(0);
         expect(firstPage.length).toBe(1);
     });

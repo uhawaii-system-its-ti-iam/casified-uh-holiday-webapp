@@ -1,6 +1,6 @@
 'use client';
 
-import {IconSortAscending, IconSortDescending, IconArrowsSort} from "@tabler/icons-react";
+import { ArrowUpNarrowWide, ArrowDownWideNarrow, ArrowUpDown } from 'lucide-react';
 
 interface sortArrowProps {
     sortDirection : string | boolean
@@ -9,11 +9,11 @@ interface sortArrowProps {
 const SortArrow = ({sortDirection}: sortArrowProps) => (
     <a>
         {sortDirection === 'asc' ? (
-            <IconSortAscending />
+            <ArrowUpNarrowWide />
         ) : sortDirection === 'desc' ? (
-            <IconSortDescending />
+            <ArrowDownWideNarrow />
         ) : (
-            <IconArrowsSort />
+            <ArrowUpDown />
         )}
     </a>
 )

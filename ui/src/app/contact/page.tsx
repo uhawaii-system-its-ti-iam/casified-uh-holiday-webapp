@@ -1,16 +1,13 @@
 import ContactAccordion from './_components/contact-accordion';
-import { Container, Col, Row } from 'react-bootstrap';
-
 const ContactPage = () => {
     return (
-        <Container fluid>
-            <Row>
-                <Col xs={{ span: 10, offset: 1 }}>
-                    <ContactAccordion />
-                </Col>
-            </Row>
-        </Container>
+        <div className="row">
+            <div className="col">
+                <ContactAccordion />
+            </div>
+        </div>
     );
 }
 
 export default ContactPage;
+// <Col xs={{ span: 10, offset: 1 }}>

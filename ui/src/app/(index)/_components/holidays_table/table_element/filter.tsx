@@ -9,7 +9,7 @@ interface FilterProps {
 
 const Filter = ({ filtering, setFiltering }: FilterProps) => {
     return (
-        <div className="col-span-3 my-3">
+        <div className="col-span-3 my-3 w-72">
             <input
                 className="border rounded p-2 w-full"
                 type="text"

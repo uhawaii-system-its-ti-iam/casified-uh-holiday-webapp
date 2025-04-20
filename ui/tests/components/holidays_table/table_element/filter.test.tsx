@@ -21,7 +21,8 @@ describe('Filter', () => {
     it('Table sorts correctly with input text.', () => {
         render(<HolidaysTable data={holidaysData}/>);
 
-        let discovDayRows = screen.queryAllByText('Discoverers\' Day');
+        let discovDayRows = screen.queryAllByText('Discoverers\' Day') as HTMLInputElement[];
+        console.log("discovDayRows: " + discovDayRows);
         expect(discovDayRows.length).toBe(0);
 
         const filter = screen.getByRole('textbox');

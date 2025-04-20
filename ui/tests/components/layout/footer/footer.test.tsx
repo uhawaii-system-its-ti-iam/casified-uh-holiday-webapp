@@ -9,7 +9,7 @@ describe ('Footer', () => {
         expect(screen.getByRole('contentinfo')).toBeInTheDocument;
         expect(screen.getByText('UNIVERSITY')).toBeInTheDocument;
         expect(screen.getByText('of')).toBeInTheDocument;
-        expect(screen.getByText('HAWAI‘I')).toBeInTheDocument;
+        expect(screen.getByText('HAWAIʻI')).toBeInTheDocument;
     });
     
 });

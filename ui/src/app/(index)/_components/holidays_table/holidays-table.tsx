@@ -27,8 +27,8 @@ import {
     getFilteredRowModel,
     getSortedRowModel,
 } from '@tanstack/react-table';
-import {useState} from 'react';
-import HolidaysTableHeaders from './table_element/holidays-table-headers';
+import { useState } from 'react';
+import HolidaysTableColumns from './table_element/holidays-table-columns';
 import { Holiday } from './holiday';
 import SortArrow from './table_element/sort-arrow';
 import Pagination from './table_element/pagination';
@@ -44,11 +44,12 @@ interface HolidaysTableProps {
 
 const HolidaysTable = ({ data }: HolidaysTableProps) => {
 
+    const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 14 });
     const [filtering, setFiltering] = useState<string>("");
-    const [sorting, setSorting] = useState([{ id: 'description', desc: false }]);
+    const [sorting, setSorting] = useState([{ id: 'observedDateFull', desc: false }]);
 
     const tableInstance = useReactTable({
-        columns: HolidaysTableHeaders,
+        columns: HolidaysTableColumns,
         data: data || [],
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
@@ -57,18 +58,21 @@ const HolidaysTable = ({ data }: HolidaysTableProps) => {
         state: {
             globalFilter: filtering,
             sorting: sorting,
+            pagination: pagination,
         },
         onGlobalFilterChange: setFiltering,
         onSortingChange: setSorting,
+        onPaginationChange: setPagination,
     });
-
     return (
         <div className="container mx-auto p-4">
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-end mb-3">
                 <Filter filtering={filtering} setFiltering={setFiltering} />
             </div>
             <Table>
-                <TableCaption>The list of holidays observed by the University of Hawai&apos;i</TableCaption>
+                <TableCaption className="mr-32">
+                    The list of holidays observed by the University of Hawai&#699;i
+                </TableCaption>
                 <TableHeader>
                     {tableInstance.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
