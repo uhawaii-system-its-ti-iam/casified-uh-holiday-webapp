@@ -29,7 +29,7 @@
       "arrow-parens": "off",
       "func-names": "off",
       "linebreak-style": "off",
-      "max-len": ["warn", 120],
+      "max-len": ["warn", 170],
       "no-console": "off",
       "no-plusplus": "off",
       "no-restricted-syntax": "off",
